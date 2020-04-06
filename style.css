@@ -1,3 +1,33 @@
-.body {
+body {
 	background-color: #a1a1a1;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 90%;
+	max-width: 800px;
+	padding-top: 50.625; 
+	margin: 0 auto;
+	background-color: white;
+  }
+
+.gameBoard {
+	display: flex;
+	/* grid-template-columns: 10vw, 10vw, 10vw, 10vw, 10vw, 10vw, 10vw, 10vw, 10vw;
+	grid-template-rows: 10vh, 10vh, 10vh, 10vh, 10vh, 10vh, 10vh, 10vh, 10vh; */
+	height: 90vh;
+	width: 90vw;
+	border-radius: 10px;
+	box-sizing: border-box;
+	background-color: white;
+	align-items: center;
+}
+
+.gameBoardSpace {
+	height: 100px;
+	width: 100px;
+	background-color: gray;
+	border: 2px solid transparent;
+	border-radius: 20px 20px 20px 20px;
+	align-items: center;
 }
