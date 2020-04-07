@@ -1,13 +1,17 @@
-body {
-	background-color: #a1a1a1;
-	box-sizing: border-box;
+* {
 	margin: none;
 }
 
+body {
+	background-color: #a1a1a1;
+	box-sizing: border-box;
+}
+
 .container {
-	width: 100%;
+	width: 1042 pt;
+	height: 640pt;
 	/* max-width: 800px; */
-	padding-top: 56.25; 
+	/* padding-top: 56.25;  */
 	margin: 0 auto;
 	background-color: white;
   }
@@ -26,11 +30,9 @@ body {
 
 .start, .square1, .square2, .square3, .square4, .square5, .square6, .square7, .square8, .square9, .square10, .square11, .square12, .square13, .square14, .square15, .square16, .square17, .square18, .square19, .square20, .square21, .square22, .square23, .square24, .square25, .square26, .square27, .square28, .square29, .square30, .square31, .square32, .square33, .finish {
 	background: #B3B3B3;
-	background: rgba(179, 179, 179, 1);
 	position: absolute ;
 	width: 90pt;
 	height: 90pt;
-	border-radius: 10pt;
 }
 .start {
 	left: 25pt;
@@ -40,20 +42,24 @@ body {
 .square1 {
 	left: 25pt;
 	top: 125pt;
+	border-radius: 10pt;
 }
 .square2 {
 	left: 25pt;
 	top: 225pt;
+	border-radius: 10pt;
 }
 .square3 {
 	left: 25pt;
 	top: 325pt;
+	border-radius: 10pt;
 }
 .square4 {
 	left: 25pt;
 	top: 425pt;
+	border-radius: 10pt;
 }
-.corner5 {
+.square5 {
 	left: 25pt;
 	top: 525pt;
 	border-radius: 10pt 10pt 10pt 45pt;
@@ -61,12 +67,14 @@ body {
 .square6 {
 	left: 125pt;
 	top: 525pt;
+	border-radius: 10pt;
 }
 .square7 {
 	left: 225pt;
 	top: 525pt;
+	border-radius: 10pt;
 }
-.corner8 {
+.square8 {
 	left: 325pt;
 	top: 525pt;
 	border-radius: 10pt 10pt 45pt 10pt;
@@ -74,13 +82,14 @@ body {
 .square9 {
 	left: 325pt;
 	top: 425pt;
+	border-radius: 10pt;
 }
-.corner10 {
+.square10 {
 	left: 325pt;
 	top: 325pt;
 	border-radius: 10pt 45pt 10pt 10pt;
 }
-.corner11 {
+.square11 {
 	left: 225pt;
 	top: 325pt;
 	border-radius: 10pt 10pt 10pt 45pt;
@@ -88,96 +97,112 @@ body {
 .square12 {
 	left: 225pt;
 	top: 225pt;
+	border-radius: 10pt;
 }
-.square12 {
+.square13 {
 	left: 225pt;
 	top: 125pt;
+	border-radius: 10pt;
 }
-.corner13 {
+.square14 {
 	left: 225pt;
 	top: 25pt;
 	border-radius: 45pt 10pt 10pt 10pt;
 }
-.square14 {
+.square15 {
 	left: 325pt;
 	top: 25pt;
-}
-.square15 {
-	left: 425pt;
-	top: 25pt;
+	border-radius: 10pt;
 }
 .square16 {
-	left: 525pt;
+	left: 425pt;
 	top: 25pt;
+	border-radius: 10pt;
 }
 .square17 {
-	left: 625pt;
+	left: 525pt;
 	top: 25pt;
+	border-radius: 10pt;
 }
 .square18 {
-	left: 725pt;
+	left: 625pt;
 	top: 25pt;
+	border-radius: 10pt;
 }
 .square19 {
+	left: 725pt;
+	top: 25pt;
+	border-radius: 10pt;
+}
+.square20 {
 	left: 825pt;
 	top: 25pt;
-}
-.corner20 {
-	left: 925pt;
-	top: 25pt;
-	border-radius: 10pt 45pt 10pt 10pt;
+	border-radius: 10pt;
 }
 .square21 {
 	left: 925pt;
-	top: 125pt;
+	top: 25pt;
+	border-radius: 10pt 45pt 10pt 10pt;
 }
-.corner22 {
+.square22 {
+	left: 925pt;
+	top: 125pt;
+	border-radius: 10pt;
+}
+.square23 {
 	left: 925pt;
 	top: 225pt;
 	border-radius: 10pt 10pt 45pt 10pt;
 }
-.square23 {
+.square24 {
 	left: 825pt;
 	top: 225pt;
+	border-radius: 10pt;
 }
-.square24 {
+.square25 {
 	left: 725pt;
 	top: 225pt;
+	border-radius: 10pt;
 }
-.corner25 {
+.square26 {
 	left: 625pt;
 	top: 225pt;
 	border-radius: 45pt 10pt 10pt 10pt;
 }
-.corner26 {
+.square27 {
 	left: 625pt;
 	top: 325pt;
 	border-radius: 10pt 10pt 45pt 10pt;
 }
-.corner27 {
-	left: 525pt;
-	top: 325pt;
-}
 .square28 {
 	left: 525pt;
-	top: 425pt;
+	top: 325pt;
+	border-radius: 45pt 10pt 10pt 10pt;
 }
-.corner29 {
+.square29 {
+	left: 525pt;
+	top: 425pt;
+	border-radius: 10pt;
+}
+.square30 {
 	left: 525pt;
 	top: 525pt;
 	border-radius: 10pt 10pt 10pt 45pt;
 }
-.square30 {
+.square31 {
 	left: 625pt;
 	top: 525pt;
-}
-.square31 {
-	left: 725pt;
-	top: 525pt;
+	border-radius: 10pt;
 }
 .square32 {
+	left: 725pt;
+	top: 525pt;
+	border-radius: 10pt;
+}
+.square33 {
 	left: 825pt;
 	top: 525pt;
+	border-radius: 10pt;
 }
 .finish {
 	left: 925pt;
@@ -185,18 +210,11 @@ body {
 	border-radius : 10pt 45pt 45pt 10pt;
 }
 
-.gameBoardSpace {
-	height: 100px;
-	width: 100px;
-	background-color: gray;
-	border: 2px solid transparent;
-	border-radius: 20px 20px 20px 20px;
-	align-items: center;
-}
-
 .problemCards {
-	width: 50px;
-	height: 50px;
-	transform: skew(10deg);
-	background: #555;
+	background: #B3B3B3;
+	position: absolute ;
+	left: 758pt;
+	top: 357pt;
+	width: 225pt;
+	height: 125pt;
 }
