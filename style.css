@@ -7,10 +7,11 @@ body {
 	box-sizing: border-box;
 }
 
-.img {
-	left: 70pt;
-	top: 70pt;
+.playerPiece1 {
+	left: 0pt;
+	top: 0pt;
 	position: absolute;
+	z-index: 50;
 }
 
 .container {
@@ -24,14 +25,17 @@ body {
 
 .gameBoard {
 	display: flex;
-	/* grid-template-columns: 10vw, 10vw, 10vw, 10vw, 10vw, 10vw, 10vw, 10vw, 10vw;
-	grid-template-rows: 10vh, 10vh, 10vh, 10vh, 10vh, 10vh, 10vh, 10vh, 10vh; */
 	height: 100%;
 	padding-top: 56.25;
 	border-radius: 10px;
 	box-sizing: border-box;
 	background-color: white;
 	align-items: center;
+	z-index: 0;
+}
+
+.boardPath {
+	box-shadow: 2px, 2px black;
 }
 
 .start, .square1, .square2, .square3, .square4, .square5, .square6, .square7, .square8, .square9, .square10, .square11, .square12, .square13, .square14, .square15, .square16, .square17, .square18, .square19, .square20, .square21, .square22, .square23, .square24, .square25, .square26, .square27, .square28, .square29, .square30, .square31, .square32, .square33, .finish {
@@ -39,6 +43,7 @@ body {
 	position: absolute ;
 	width: 90pt;
 	height: 90pt;
+	z-index: 1;
 }
 .start {
 	left: 25pt;
