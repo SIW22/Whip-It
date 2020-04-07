@@ -24,374 +24,166 @@ body {
 	align-items: center;
 }
 
-
-
+.start, .square1, .square2, .square3, .square4, .square5, .square6, .square7, .square8, .square9, .square10, .square11, .square12, .square13, .square14, .square15, .square16, .square17, .square18, .square19, .square20, .square21, .square22, .square23, .square24, .square25, .square26, .square27, .square28, .square29, .square30, .square31, .square32, .square33, .finish {
+	background: #B3B3B3;
+	background: rgba(179, 179, 179, 1);
+	position: absolute ;
+	width: 90pt;
+	height: 90pt;
+	border-radius: 10pt;
+}
 .start {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 55pt;
-	top : 28pt;
-	width : 110pt;
-	height : 114pt;
+	left: 25pt;
+	top: 25pt;
+	border-radius: 45pt 45pt 10pt 10pt;
 }
-.sq1 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 37pt;
-	top : 131pt;
-	width : 101pt;
-	height : 93pt;
+.square1 {
+	left: 25pt;
+	top: 125pt;
 }
-.sq2 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 26pt;
-	top : 217pt;
-	width : 94pt;
-	height : 80pt;
-} 
-.sq3 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 25pt;
-	top : 302pt;
-	width : 87pt;
-	height : 88pt;
+.square2 {
+	left: 25pt;
+	top: 225pt;
 }
-.sq4 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 28pt;
-	top : 384pt;
-	width : 99pt;
-	height : 92pt;
+.square3 {
+	left: 25pt;
+	top: 325pt;
 }
-.sq5 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 49pt;
-	top : 451pt;
-	width : 111pt;
-	height : 108pt;
-	border-radius : 31pt 51pt 0pt 0pt  / 48pt 78pt 0pt 0pt;
+.square4 {
+	left: 25pt;
+	top: 425pt;
 }
-.sq6 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 104pt;
-	top : 503pt;
-	width : 111pt;
-	height : 107pt;
-	border-radius : 50pt 81pt 0pt 0pt  / 27pt 47pt 0pt 0pt;
+.corner5 {
+	left: 25pt;
+	top: 525pt;
+	border-radius: 10pt 10pt 10pt 45pt;
 }
-.sq7 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 191pt;
-	top : 532pt;
-	width : 97pt;
-	height : 92pt;
-	border-radius : 63pt 97pt 0pt 0pt  / 7pt 12pt 0pt 0pt;
+.square6 {
+	left: 125pt;
+	top: 525pt;
 }
-.sq8 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 291pt;
-	top : 523pt;
-	width : 110pt;
-	height : 101pt;
-} 
-.sq9 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 361pt;
-	top : 478pt;
-	width : 121pt;
-	height : 116pt;
-	border-radius : 39pt 77pt 0pt 0pt  / 42pt 89pt 0pt 0pt;
+.square7 {
+	left: 225pt;
+	top: 525pt;
 }
-.sq10 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 396pt;
-	top : 376pt;
-	width : 98pt;
-	height : 123pt;
-	border-radius : 7pt 8pt 0pt 0pt  / 64pt 123pt 0pt 0pt;
+.corner8 {
+	left: 325pt;
+	top: 525pt;
+	border-radius: 10pt 10pt 45pt 10pt;
 }
-.sq11 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 352pt;
-	top : 295pt;
-	width : 121pt;
-	height : 108pt;
+.square9 {
+	left: 325pt;
+	top: 425pt;
 }
-.sq12 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 293pt;
-	top : 242pt;
-	width : 113pt;
-	height : 111pt;
+.corner10 {
+	left: 325pt;
+	top: 325pt;
+	border-radius: 10pt 45pt 10pt 10pt;
 }
-.sq13 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 236pt;
-	top : 191pt;
-	width : 114pt;
-	height : 106pt;
-	border-radius : 53pt 38pt 0pt 0pt  / 67pt 47pt 0pt 0pt;
+.corner11 {
+	left: 225pt;
+	top: 325pt;
+	border-radius: 10pt 10pt 10pt 45pt;
 }
-.sq14 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 223pt;
-	top : 123pt;
-	width : 92pt;
-	height : 103pt;
-	border-radius : 5pt 0pt 0pt 0pt  / 35pt 103pt 0pt 0pt;
+.square12 {
+	left: 225pt;
+	top: 225pt;
 }
-.sq15 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 236pt;
-	top : 41pt;
-	width : 122pt;
-	height : 104pt;
-	border-radius : 40pt 83pt 0pt 0pt  / 28pt 77pt 0pt 0pt;
+.square12 {
+	left: 225pt;
+	top: 125pt;
 }
-.sq16 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 429pt;
-	top : 17pt;
-	width : 91pt;
-	height : 89pt;
-	border-radius : 74pt 64pt 27pt 0pt  / 3pt 4pt 0pt 0pt;
+.corner13 {
+	left: 225pt;
+	top: 25pt;
+	border-radius: 45pt 10pt 10pt 10pt;
 }
-.sq17 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 324pt;
-	top : 18pt;
-	width : 102pt;
-	height : 97pt;
-	border-radius : 64pt 99pt 0pt 0pt  / 11pt 20pt 0pt 0pt;
+.square14 {
+	left: 325pt;
+	top: 25pt;
 }
-.sq18 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 514pt;
-	top : 23pt;
-	width : 103pt;
-	height : 100pt;
-	border-radius : 82pt 91pt 0pt 0pt  / 15pt 17pt 0pt 0pt;
+.square15 {
+	left: 425pt;
+	top: 25pt;
 }
-.sq19 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 602pt;
-	top : 40pt;
-	width : 98pt;
-	height : 96pt;
+.square16 {
+	left: 525pt;
+	top: 25pt;
 }
-.sq20 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 702pt;
-	top : 47pt;
-	width : 93pt;
-	height : 90pt;
-	border-radius : 90pt 79pt 0pt 0pt  / 5pt 4pt 0pt 0pt;
+.square17 {
+	left: 625pt;
+	top: 25pt;
 }
-.sq21 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 788pt;
-	top : 34pt;
-	width : 95pt;
-	height : 96pt;
-	border-radius : 81pt 77pt 0pt 0pt  / 12pt 12pt 0pt 0pt;
+.square18 {
+	left: 725pt;
+	top: 25pt;
 }
-.sq22 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 871pt;
-	top : 28pt;
-	width : 93pt;
-	height : 89pt;
-	border-radius : 67pt 93pt 0pt 0pt  / 3pt 4pt 0pt 0pt;
+.square19 {
+	left: 825pt;
+	top: 25pt;
 }
-.sq23 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 962pt;
-	top : 30pt;
-	width : 107pt;
-	height : 102pt;
-	border-radius : 55pt 99pt 0pt 0pt  / 17pt 35pt 0pt 0pt;
+.corner20 {
+	left: 925pt;
+	top: 25pt;
+	border-radius: 10pt 45pt 10pt 10pt;
 }
-.sq24 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 1022pt;
-	top : 68pt;
-	width : 95pt;
-	height : 125pt;
-	border-radius : 8pt 40pt 0pt 0pt  / 39pt 126pt 0pt 0pt;
+.square21 {
+	left: 925pt;
+	top: 125pt;
 }
-.sq25 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 979pt;
-	top : 181pt;
-	width : 133pt;
-	height : 101pt;
+.corner22 {
+	left: 925pt;
+	top: 225pt;
+	border-radius: 10pt 10pt 45pt 10pt;
 }
-.sq26 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 878pt;
-	top : 205pt;
-	width : 136pt;
-	height : 92pt;
+.square23 {
+	left: 825pt;
+	top: 225pt;
 }
-.sq27 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 774pt;
-	top : 213pt;
-	width : 122pt;
-	height : 86pt;
+.square24 {
+	left: 725pt;
+	top: 225pt;
 }
-.sq28 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 683pt;
-	top : 215pt;
-	width : 101pt;
-	height : 91pt;
+.corner25 {
+	left: 625pt;
+	top: 225pt;
+	border-radius: 45pt 10pt 10pt 10pt;
 }
-.sq29 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 594pt;
-	top : 226pt;
-	width : 115pt;
-	height : 98pt;
+.corner26 {
+	left: 625pt;
+	top: 325pt;
+	border-radius: 10pt 10pt 45pt 10pt;
 }
-.sq30 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 530pt;
-	top : 259pt;
-	width : 113pt;
-	height : 104pt;
-	border-radius : 34pt 59pt 0pt 0pt  / 37pt 72pt 0pt 0pt;
+.corner27 {
+	left: 525pt;
+	top: 325pt;
 }
-.sq31 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 522pt;
-	top : 337pt;
-	width : 98pt;
-	height : 108pt;
-	border-radius : 12pt 7pt 0pt 0pt  / 55pt 109pt 0pt 0pt;
+.square28 {
+	left: 525pt;
+	top: 425pt;
 }
-.sq32 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 538pt;
-	top : 427pt;
-	width : 119pt;
-	height : 104pt;
+.corner29 {
+	left: 525pt;
+	top: 525pt;
+	border-radius: 10pt 10pt 10pt 45pt;
 }
-.sq33 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 602pt;
-	top : 473pt;
-	width : 109pt;
-	height : 103pt;
+.square30 {
+	left: 625pt;
+	top: 525pt;
 }
-.sq34 {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 677pt;
-	top : 502pt;
-	width : 105pt;
-	height : 99pt;
+.square31 {
+	left: 725pt;
+	top: 525pt;
 }
-.sq35 {
-	background : #C7B299;
-	background : rgba(199, 178, 153, 1);
-	position : absolute ;
-	left : 779pt;
-	top : 517pt;
-	width : 89pt;
-	height : 87pt;
-	border-radius : 71pt 90pt 0pt 0pt  / 1pt 1pt 0pt 0pt;
-}
-.sq36 {
-	background : #736357;
-	background : rgba(115, 99, 87, 1);
-	position : absolute ;
-	left : 866pt;
-	top : 513pt;
-	width : 93pt;
-	height : 90pt;
+.square32 {
+	left: 825pt;
+	top: 525pt;
 }
 .finish {
-	background : #998675;
-	background : rgba(153, 134, 117, 1);
-	position : absolute ;
-	left : 952pt;
-	top : 490pt;
-	width : 162pt;
-	height : 107pt;
-	border-radius : 137pt 150pt 0pt 0pt  / 22pt 25pt 0pt 0pt;
+	left: 925pt;
+	top: 525pt;
+	border-radius : 10pt 45pt 45pt 10pt;
 }
-
-
-
-
 
 .gameBoardSpace {
 	height: 100px;
