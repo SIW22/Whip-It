@@ -20,7 +20,7 @@ const problemCardDeck = [
 const dieSides = [
 	{message: 'ONE', action: movePlayer(1)},
 	{message: 'TWO', action: movePlayer(2)},
-	{message: 'PROBLEM', action: movePlayer(1)}
+	{message: 'PROBLEM', action: problemCardDraw()}
 ]
 
 /* Game Engine */
@@ -30,11 +30,12 @@ function playerSelect() {
 
 }
 
-function colorSelect() {
+function colorSelect() { 
 
 }
 
-function diceRoll() {
+function diceRoll(arr) { //locates a random die side from array
+	return arr[randomize(arr)];
 
 }
 
@@ -54,9 +55,7 @@ function movePlayer() {
 
 }
 
-let arr = problemCardDeck;
-
-function randomCard(arr) { //locates a random card from a given array
+function randomCard(arr) { //locates a random card from a ProblemCardDeck
 	return arr[randomize(arr)];
 }
 
