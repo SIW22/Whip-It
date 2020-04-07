@@ -3,6 +3,11 @@
 game loads, and prompts if there will be one or two players:
 player one chooses a player piece color
 player two chooses a player piece color (only if Two Player was selected)
+check if color was already selected by player one, if yes
+prompt w/ that color has already been selected, please choose a different color.
+**Nice to have: highlight overlay on mouse hover, maybe increase size of button a bit
+**Maybe the pieces jiggle a little bit while waiting?
+**Gray out previously selected color
 
 player piece(s) appear at 'start'.
 if two players, player pieces appear side by side
@@ -38,4 +43,9 @@ must click the logo button in the center of the board to continue.
 
 game play continues until one player reaches the Finish Square.
 open finish dialog and ask to play again w/ button
+
+** Nice to have: sound effect on problem card resolution.
+
+**Nice to have: active player is highlighted by adding a glow to the square
+their piece is on. 
 */

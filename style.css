@@ -19,6 +19,7 @@ body {
 	height: 640pt;
 	margin: 0 auto;
 	background-color: white;
+	position: absolute;
 }
 
 .gameBoard {
@@ -46,7 +47,6 @@ body {
 	left: 25pt;
 	top: 25pt;
 	border-radius: 45pt 45pt 10pt 10pt;
-	box-shadow: 2px, black;
 }
 .square1 {
 	left: 25pt;
