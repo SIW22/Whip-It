@@ -7,6 +7,12 @@ body {
 	box-sizing: border-box;
 }
 
+.img {
+	left: 70pt;
+	top: 70pt;
+	position: absolute;
+}
+
 .container {
 	width: 1042 pt;
 	height: 640pt;
