@@ -24,7 +24,7 @@ const dieSides = [
 
 /* Game Engine */
 
-function diceRoll(arr) { //locates a random die side from array
+function dieRoll(arr) { //locates a random die side from array
 	// return arr[randomize(arr)];
 }
 

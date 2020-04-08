@@ -45,7 +45,7 @@ body {
 }
 
 h2 {
-	font-family: Baloo; sans-serif;
+	font-family: Baloo, sans-serif;
 	color: black;
 	text-align: center;
 	padding: 20px;
@@ -83,6 +83,22 @@ h2 {
 
 /* Board.html */
 
+#whipIt {
+	position: relative;
+	left: 350pt;
+	top: 140pt;
+	z-index: 50;
+	/* box-shadow: 6pt 6pt 6pt rgba(0, 0, 0, 0.75); */
+}
+
+#rollDie {
+	position: relative;
+	left: 150pt;
+	top: 300pt;
+	transform: rotate(45deg);
+	z-index: 50;
+}
+
 .playerPiece1 {
 	left: 22pt;
 	top: 5pt;
@@ -118,21 +134,6 @@ h2 {
 	width: 225pt;
 	height: 125pt;
 }
-
-#whipIt {
-	left: 450pt;
-	top: 150pt;
-	z-index: 100;
-}
-
-#rollDie {
-	left: 150pt;
-	top: 450pt;
-	position: absolute;
-	transform: rotate(45deg);
-	z-index: 100;
-}
-
 
 .square0, .square1, .square2, .square3, .square4, .square5, .square6, .square7, .square8, .square9, .square10, .square11, .square12, .square13, .square14, .square15, .square16, .square17, .square18, .square19, .square20, .square21, .square22, .square23, .square24, .square25, .square26, .square27, .square28, .square29, .square30, .square31, .square32, .square33, .square34 {
 	background: #B3B3B3;
