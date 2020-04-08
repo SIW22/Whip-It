@@ -8,9 +8,9 @@ const problemCardDeck = [
 	{message: `WHEN A GOOD TIME TURNS AROUND, YOU MUST WHIP IT!`, action: movePlayer(-1)},
 	{message: `BEFORE THE CREAM SITS OUT TOO LONG, YOU MUST WHIP IT!`, action: movePlayer(-1)},
 	{message: `SHAPE IT UP!`, action: movePlayer(-1)},
-	{message: `WHEN A PROBLEM COMES ALONG, YOU MUST WHIP IT!`, action: 'none'},
-	{message: `CRACK THAT WHIP! GIVE THE PAST THE SLIP!`, action: 'none'},
-	{message: `YOU WILL NEVER LIVE IT DOWN, UNTIL YOU WHIP IT!`, action: 'none'},
+	{message: `WHEN A PROBLEM COMES ALONG, YOU MUST WHIP IT!`, action: movePlayer(0)},
+	{message: `CRACK THAT WHIP! GIVE THE PAST THE SLIP!`, action: movePlayer(0)},
+	{message: `YOU WILL NEVER LIVE IT DOWN, UNTIL YOU WHIP IT!`, action: movePlayer(0)},
 	{message: `WHIP IT, INTO SHAPE!`, action: goAgain()},
 	{message: `IT'S NOT TOO LATE, TO WHIP IT!`, action: goAgain()},
 	{message: `WHIP IT GOOD!`, action: goAgain()},
@@ -24,6 +24,17 @@ const dieSides = [
 	{message: 'TWO', action: movePlayer(2)},
 	{message: 'PROBLEM', action: problemCardDraw()},
 ]
+
+const player1 {
+	color: '',
+	currentSquare: .square_0,
+}
+
+const player2 {
+	color: '',
+	currentSquare: .square_0,
+}
+
 
 /* Game Engine */
 
@@ -92,7 +103,20 @@ function loseTurn() { //triggers goAgain on otherplayer
 
 }
 
-function movePlayer(int) { //moves spaces based on input
+function movePlayer(playerNum, distance) { //moves spaces based on input
+	// player starts on square_0. and cannot back up from there.
+	//check if player is on square_0.
+	const currentSquare = ()
+	if (currentSquare === 0) {
+		if (distance >= 0) {
+			//add distance to current appended square
+
+		}
+	}
+
+
+
+
 	// use int to move current player position on the board
 	// append player piece to different square based on int
 }

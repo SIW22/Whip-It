@@ -28,7 +28,7 @@ A splash page with a winning message is loaded, and the players are asked if the
 
 ---
 
-### Techinical Requirements
+### Technical Requirements
 
 Random engine for dice roll on click.
 
