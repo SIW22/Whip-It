@@ -10,49 +10,75 @@ body {
 /* Index.html */
 
 .landingScreen {
-	z-index: 60;
+	z-index: 0;
+	background: white;
+	position: absolute;
+	justify-content: center;
+	left: 245pt;
+	top: 103pt;
+	width: 550pt;
+	height: 432pt;
+	border-radius: 16pt;
+	box-shadow: 8pt 8pt 8pt rgba(0, 0, 0, 0.75);
 }
-#onePlayer , #twoPlayer {
+
+#onePlayer, #twoPlayer {
 	font-family: Baloo; sans-serif;
 	font-size: 24pt;
-	color: #FFFFFF;
-	color: rgb(255, 255, 255);
-	background-color: red;
-	/* border: linear-gradient(191deg, rgba(255, 94, 85, 1) 0%, rgba(0, 0, 0, 1) 100%); */
+	color: white;
+	background-color: #C1272D;
 	border-radius : 10pt;
 	padding: 6px 22px;
-	box-shadow: 8px, 8px, black;
+	box-shadow: 4pt 4pt 4pt rgba(0, 0, 0, 0.75);
+	position: relative;
+	align-items: center;
+}
+
+#onePlayer {
+	left: 342;
+	top: 171;
+}
+
+#twoPlayer {
+	left: 539;
+	top: 171;
 }
 
 h2 {
 	font-family: Baloo; sans-serif;
 	color: black;
+	text-align: center;
+	padding: 20px;
 }
 
 .colors {
 	position: absolute;
 	z-index: 70;
-	height: 250px;
+	padding: 20px 70px;
 }
 
 #black {
 	left: 308;
 	top: 322;
+	padding: 15px;
 }
 
 #yellow {
 	left: 422;
 	top: 322;
+	padding: 15px;
 }
 
 #orange {
 	left: 536;
 	top: 322;
+	padding: 15px;
 }
 
 #red {
 	left: 650;
 	top: 322;
+	padding: 15px;
 }
 
 /* Board.html */
@@ -66,14 +92,14 @@ h2 {
 }
 
 .container {
-	width: 1042 pt;
+	width: 1042pt;
 	height: 640pt;
 	margin: 0 auto;
 	background-color: white;
 	position: absolute;
 }
 
-.gameBoard {
+/* .gameBoard {
 	display: flex;
 	height: 100%;
 	padding-top: 56.25;
@@ -82,7 +108,7 @@ h2 {
 	background-color: white;
 	align-items: center;
 	z-index: 0;
-}
+} */
 
 .problemCards {
 	background: white;
@@ -93,8 +119,20 @@ h2 {
 	height: 125pt;
 }
 
-.boardPath {
+#whipIt {
+	left: 450pt;
+	top: 150pt;
+	z-index: 100;
 }
+
+#rollDie {
+	left: 150pt;
+	top: 450pt;
+	position: absolute;
+	transform: rotate(45deg);
+	z-index: 100;
+}
+
 
 .square0, .square1, .square2, .square3, .square4, .square5, .square6, .square7, .square8, .square9, .square10, .square11, .square12, .square13, .square14, .square15, .square16, .square17, .square18, .square19, .square20, .square21, .square22, .square23, .square24, .square25, .square26, .square27, .square28, .square29, .square30, .square31, .square32, .square33, .square34 {
 	background: #B3B3B3;
