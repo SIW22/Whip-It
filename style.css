@@ -6,10 +6,50 @@ body {
 	background-color: #a1a1a1;
 	box-sizing: border-box;
 }
+.landingScreen {
+	z-index: 60;
+}
+#onePlayer , #twoPlayer {
+	font-family: Baloo; sans-serif;
+	font-size: 24pt;
+	color: #FFFFFF;
+	color: rgb(255, 255, 255);
+	background-color: red;
+	/* border: linear-gradient(191deg, rgba(255, 94, 85, 1) 0%, rgba(0, 0, 0, 1) 100%); */
+	border-radius : 10pt;
+	padding: 6px 22px;
+	box-shadow: 8px, 8px, black;
+}
+
+.colors {
+	position: absolute;
+	z-index: 70;
+}
+
+#color1 {
+	left: 308;
+	top: 322;
+}
+
+#color2 {
+	left: 422;
+	top: 322;
+}
+
+#color3 {
+	left: 536;
+	top: 322;
+}
+
+#color4 {
+	left: 650;
+	top: 322;
+}
 
 .playerPiece1 {
 	left: 22pt;
 	top: 5pt;
+	height: 100px;
 	position: absolute;
 	z-index: 50;
 }
@@ -33,17 +73,26 @@ body {
 	z-index: 0;
 }
 
+.problemCards {
+	background: white;
+	position: absolute ;
+	left: 758pt;
+	top: 357pt;
+	width: 225pt;
+	height: 125pt;
+}
+
 .boardPath {
 }
 
-.start, .square1, .square2, .square3, .square4, .square5, .square6, .square7, .square8, .square9, .square10, .square11, .square12, .square13, .square14, .square15, .square16, .square17, .square18, .square19, .square20, .square21, .square22, .square23, .square24, .square25, .square26, .square27, .square28, .square29, .square30, .square31, .square32, .square33, .finish {
+.square0, .square1, .square2, .square3, .square4, .square5, .square6, .square7, .square8, .square9, .square10, .square11, .square12, .square13, .square14, .square15, .square16, .square17, .square18, .square19, .square20, .square21, .square22, .square23, .square24, .square25, .square26, .square27, .square28, .square29, .square30, .square31, .square32, .square33, .square34 {
 	background: #B3B3B3;
 	position: absolute ;
 	width: 90pt;
 	height: 90pt;
 	z-index: 1;
 }
-.start {
+.square0 {
 	left: 25pt;
 	top: 25pt;
 	border-radius: 45pt 45pt 10pt 10pt;
@@ -213,17 +262,8 @@ body {
 	top: 525pt;
 	border-radius: 10pt;
 }
-.finish {
+.square34 {
 	left: 925pt;
 	top: 525pt;
 	border-radius : 10pt 45pt 45pt 10pt;
-}
-
-.problemCards {
-	background: white;
-	position: absolute ;
-	left: 758pt;
-	top: 357pt;
-	width: 225pt;
-	height: 125pt;
 }

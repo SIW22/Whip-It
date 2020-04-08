@@ -14,7 +14,7 @@ game piece they prefer, the selections are made with a click.
 The game board loads with the selected
 game piece(s) on the Start square.
 
-Player one must click the die to 'roll' it. A 'one', 'two', or '!' wil lbe rolled. 
+Player one must click the die to 'roll' it. A 'one', 'two', or '!' will be rolled. 
 
 Upon rolling a 'one' or a 'two' the player's game piece will advance that many spaces, and the text on that space will be read. 
 

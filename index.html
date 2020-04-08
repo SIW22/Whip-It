@@ -6,65 +6,25 @@
 	<title>Board Game</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="app.js" defer></script>
-	<link rel="shortcut icon" href="gitignore/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="gitignore/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-	<!-- <img class = 'playerPiece1' src="https://i.imgur.com/Aqql3rV.gif"> -->
-	
-	<div class = 'gameBoard'>
-		<section class = 'boardPath'>
-			<div class = 'start'><img class = 'playerPiece1' src="https://i.imgur.com/Aqql3rV.gif"></div>
-			<div class = 'square1'></div>
-			<div class = 'square2'></div>
-			<div class = 'square3'></div>
-			<div class = 'square4'></div>
-			<div class = 'square5'></div>
-			<div class = 'square6'></div>
-			<div class = 'square7'></div>
-			<div class = 'square8'></div>
-			<div class = 'square9'></div>
-			<div class = 'square10'></div>
-			<div class = 'square11'></div>
-			<div class = 'square12'></div>
-			<div class = 'square13'></div>
-			<div class = 'square14'></div>
-			<div class = 'square15'></div>
-			<div class = 'square16'></div>
-			<div class = 'square17'></div>
-			<div class = 'square18'></div>
-			<div class = 'square19'></div>
-			<div class = 'square20'></div>
-			<div class = 'square21'></div>
-			<div class = 'square22'></div>
-			<div class = 'square23'></div>
-			<div class = 'square24'></div>
-			<div class = 'square25'></div>
-			<div class = 'square26'></div>
-			<div class = 'square27'></div>
-			<div class = 'square28'></div>
-			<div class = 'square29'></div>
-			<div class = 'square30'></div>
-			<div class = 'square31'></div>
-			<div class = 'square32'></div>
-			<div class = 'square33'></div>
-			<div class = 'finish'></div>
-		</section>
-		<div class = problemCards></div>	
-		<div class = gameBoardSpace></div>
+	<div class = 'landingScreen'>
+		<nav class = 'players'>
+			<button id = 'onePlayer'>ONE PLAYER</button>
+			<button id = 'twoPlayer'>TWO PLAYER</button>
+		</nav>
+		<nav class = 'colors'>
+			
+			<button id = 'color1'></button><img class = 'black' src ="black.svg"></button>
+			<button id = 'color2'><img class = 'yellow' src ="yellow.svg"></button>
+			<button id = 'color3'><img class = 'orange' src ="orange.svg"></button>
+			<button id = 'color4'><img class = 'red' src ="red.svg"></button>
+		</nav>
 	</div>
-	<nav>
-		<button>'One Player'</button>
-		<button>'Two Player'</button>
-	</nav>
-	<nav>
-		<button>'Color1'</button>
-		<button>'Color2'</button>
-		<button>'Color3'</button>
-		<button>'Color4'</button>
-	</nav>
-	<button>'Push me to resolve cards!'</button>
-	<button>'Roll Die!</button>
+
+	<p>Start<a href="board.html"> Game!</a></p>
 
 </body>
 </html>
