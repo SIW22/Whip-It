@@ -6,6 +6,9 @@ body {
 	background-color: #a1a1a1;
 	box-sizing: border-box;
 }
+
+/* Index.html */
+
 .landingScreen {
 	z-index: 60;
 }
@@ -21,30 +24,38 @@ body {
 	box-shadow: 8px, 8px, black;
 }
 
+h2 {
+	font-family: Baloo; sans-serif;
+	color: black;
+}
+
 .colors {
 	position: absolute;
 	z-index: 70;
+	height: 250px;
 }
 
-#color1 {
+#black {
 	left: 308;
 	top: 322;
 }
 
-#color2 {
+#yellow {
 	left: 422;
 	top: 322;
 }
 
-#color3 {
+#orange {
 	left: 536;
 	top: 322;
 }
 
-#color4 {
+#red {
 	left: 650;
 	top: 322;
 }
+
+/* Board.html */
 
 .playerPiece1 {
 	left: 22pt;
@@ -267,3 +278,5 @@ body {
 	top: 525pt;
 	border-radius : 10pt 45pt 45pt 10pt;
 }
+
+/* Victory.html */
