@@ -32,6 +32,7 @@ body {
 	box-shadow: 4pt 4pt 4pt rgba(0, 0, 0, 0.75);
 	position: relative;
 	align-items: center;
+	margin: 20pt;
 }
 
 #onePlayer {
@@ -112,7 +113,7 @@ h2 {
 	transform: rotate(45deg);
 }
 
-button {
+.board, .win, .again, .p1Backward, .p1Forward, .p2Backward, .p2Forward {
 	position: relative;
 	top: 400pt;
 }

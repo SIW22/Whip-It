@@ -56,21 +56,23 @@ function gameMode(num) {
 }
 
 function onePlayerGameProtocol() {
+	// adds color choice to object
+	localStorage.getItem()
 	// player clicks die to roll
 	// player piece moves or a card is drawn
 	// player must click to resolve card
 	// repeats until square 34 is reached
 	// 'lose a turn' cards are ignored
-	// player one victory page "You reached the Finish!"
+	// player one victory page "You Whipped it Good!"
 }
 
 function twoPlayerGameProtocol() {
 	// player one takes a turn
 	// player two takes a turn
 	// repeats until square 34 is reached by either player.
-	// winning player shown on victory page. "Player x Wins!"
+	// winning player shown on victory page. "Player x Whipped it Good!"
 
-	// *** display whose turn it is during game? 
+	// display whose turn it is during game? 
 }
 /* 
 function dieRoll(arr) { //locates a random die side from array
