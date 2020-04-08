@@ -4,13 +4,13 @@ console.log('testing')
 const problemCardDeck = [
 	{message: `GO FORWARD!`, action: movePlayer(1)},
 	{message: `MOVE AHEAD!`, action: movePlayer(1)},
-	{message: `GET STRAIGHT!`, action: movePlayer(1)},
+	{message: `TRY TO DETECT IT!`, action: movePlayer(1)},
 	{message: `WHEN A GOOD TIME TURNS AROUND, YOU MUST WHIP IT!`, action: movePlayer(-1)},
 	{message: `BEFORE THE CREAM SITS OUT TOO LONG, YOU MUST WHIP IT!`, action: movePlayer(-1)},
 	{message: `SHAPE IT UP!`, action: movePlayer(-1)},
 	{message: `WHEN A PROBLEM COMES ALONG, YOU MUST WHIP IT!`, action: 'none'},
 	{message: `CRACK THAT WHIP! GIVE THE PAST THE SLIP!`, action: 'none'},
-	{message: `YOU WILL NEVER LIVE IT DOWN, UNTIL YOU WIHP IT!`, action: 'none'},
+	{message: `YOU WILL NEVER LIVE IT DOWN, UNTIL YOU WHIP IT!`, action: 'none'},
 	{message: `WHIP IT, INTO SHAPE!`, action: goAgain()},
 	{message: `IT'S NOT TOO LATE, TO WHIP IT!`, action: goAgain()},
 	{message: `WHIP IT GOOD!`, action: goAgain()},
@@ -32,14 +32,36 @@ const dieSides = [
 // input player one color choice
 // input player two color choice
 
+console.log(localStorage.getItem('test'));
+
 function gameMode(num) {
 	if (playerSelect(num) === 1) {
-		//run one player game
+		onePlayerGameProtocol();
+		console.log('One Player Game Selected.')
 	} else if (playerSelect(num) === 2) {
-		//run two player game
+		twoPlayerGameProtocol();
+		console.log('Two Player Game Selected')
 	}
 }
 
+function onePlayerGameProtocol() {
+	// player clicks die to roll
+	// player piece moves or a card is drawn
+	// player must click to resolve card
+	// repeats until square 34 is reached
+	// 'lose a turn' cards are ignored
+	// player one victory page "You reached the Finish!"
+}
+
+function twoPlayerGameProtocol() {
+	// player one takes a turn
+	// player two takes a turn
+	// repeats until square 34 is reached by either player.
+	// winning player shown on victory page. "Player x Wins!"
+
+	// *** display whose turn it is during game? 
+}
+/* 
 function dieRoll(arr) { //locates a random die side from array
 	if (arr[randomize(arr)] === 0) {
 		let currentDie = document.getElementById('die');
@@ -52,7 +74,7 @@ function dieRoll(arr) { //locates a random die side from array
 		currentDie("problemDie.svg") // how to link this properly?
 	}
 	return arr[randomize(arr)];
-}
+} */
 
 function problemCardDraw(arr) { //locates a random card from a ProblemCardDeck
 	return arr[randomize(arr)];
@@ -75,15 +97,24 @@ function movePlayer(int) { //moves spaces based on input
 	// append player piece to different square based on int
 }
 
-function whipIt() { //
-	// resolves active Problem Card
-	// triggers sound effect w/ event listener
+document.getElementsByClassName(.forward).addEventListener() {
+	document.querySelector("#The-Shire").append(ul);
 }
 
-// function whipCrack() {
-// 		sound effect 
-// 	}
+const whipCrack = new Audio(whipcrack.mp3)
 
+/* function whipIt() { //
+	// resolves active Problem Card
+	#whipItLogo.addEventListener('click', () => {})
+	whipCrack.play();
+	})
+} */
+
+let logoButton = ${#whipItLogo};
+
+#whipItLogo.addEventListener('click', () => {})
+	whipCrack.play();
+	})
 
 // document.querySelector('button').addEventListener('click', function() {
 // 	$('h2').attr('id', 'name').append('Skot Walker');

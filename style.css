@@ -23,11 +23,11 @@ body {
 }
 
 #onePlayer, #twoPlayer {
-	font-family: Baloo; sans-serif;
+	font-family: Baloo, sans-serif;
 	font-size: 24pt;
 	color: white;
 	background-color: #C1272D;
-	border-radius : 10pt;
+	border-radius: 10pt;
 	padding: 6px 22px;
 	box-shadow: 4pt 4pt 4pt rgba(0, 0, 0, 0.75);
 	position: relative;
@@ -49,6 +49,19 @@ h2 {
 	color: black;
 	text-align: center;
 	padding: 20px;
+}
+
+.currentPlayer {
+	font-family: Baloo, sans-serif;
+	color: white;
+	font-size: 20pt;
+	position: absolute;
+	left: 675pt;
+	top: 135pt;
+	background-color: #C1272D;
+	box-shadow: 2pt 2pt 2pt rgba(0, 0, 0, 0.75);
+	border-radius: 10pt;
+	padding: 6px 22px;
 }
 
 .colors {
@@ -83,7 +96,7 @@ h2 {
 
 /* Board.html */
 
-#whipIt {
+#whipItLogo {
 	position: relative;
 	left: 350pt;
 	top: 140pt;
@@ -91,20 +104,29 @@ h2 {
 	/* box-shadow: 6pt 6pt 6pt rgba(0, 0, 0, 0.75); */
 }
 
-#rollDie {
+#die {
 	position: relative;
-	left: 150pt;
-	top: 300pt;
-	transform: rotate(45deg);
+	left: 160pt;
+	top: 270pt;
 	z-index: 50;
+	transform: rotate(45deg);
 }
 
-.playerPiece1 {
+button {
+	position: relative;
+	top: 400pt;
+}
+
+.playerPiece_1, .playerPiece_2, .playerPiece_3, .playerPiece_4{
 	left: 22pt;
 	top: 5pt;
 	height: 100px;
 	position: absolute;
 	z-index: 50;
+}
+
+.holdingPen {
+	display: none;
 }
 
 .container {
@@ -135,184 +157,184 @@ h2 {
 	height: 125pt;
 }
 
-.square0, .square1, .square2, .square3, .square4, .square5, .square6, .square7, .square8, .square9, .square10, .square11, .square12, .square13, .square14, .square15, .square16, .square17, .square18, .square19, .square20, .square21, .square22, .square23, .square24, .square25, .square26, .square27, .square28, .square29, .square30, .square31, .square32, .square33, .square34 {
+.square_0, .square_1, .square_2, .square_3, .square_4, .square_5, .square_6, .square_7, .square_8, .square_9, .square_10, .square_11, .square_12, .square_13, .square_14, .square_15, .square_16, .square_17, .square_18, .square_19, .square_20, .square_21, .square_22, .square_23, .square_24, .square_25, .square_26, .square_27, .square_28, .square_29, .square_30, .square_31, .square_32, .square_33, .square_34 {
 	background: #B3B3B3;
 	position: absolute ;
 	width: 90pt;
 	height: 90pt;
 	z-index: 1;
 }
-.square0 {
+.square_0 {
 	left: 25pt;
 	top: 25pt;
 	border-radius: 45pt 45pt 10pt 10pt;
 }
-.square1 {
+.square_1 {
 	left: 25pt;
 	top: 125pt;
 	border-radius: 10pt;
 }
-.square2 {
+.square_2 {
 	left: 25pt;
 	top: 225pt;
 	border-radius: 10pt;
 }
-.square3 {
+.square_3 {
 	left: 25pt;
 	top: 325pt;
 	border-radius: 10pt;
 }
-.square4 {
+.square_4 {
 	left: 25pt;
 	top: 425pt;
 	border-radius: 10pt;
 }
-.square5 {
+.square_5 {
 	left: 25pt;
 	top: 525pt;
 	border-radius: 10pt 10pt 10pt 45pt;
 }
-.square6 {
+.square_6 {
 	left: 125pt;
 	top: 525pt;
 	border-radius: 10pt;
 }
-.square7 {
+.square_7 {
 	left: 225pt;
 	top: 525pt;
 	border-radius: 10pt;
 }
-.square8 {
+.square_8 {
 	left: 325pt;
 	top: 525pt;
 	border-radius: 10pt 10pt 45pt 10pt;
 }
-.square9 {
+.square_9 {
 	left: 325pt;
 	top: 425pt;
 	border-radius: 10pt;
 }
-.square10 {
+.square_10 {
 	left: 325pt;
 	top: 325pt;
 	border-radius: 10pt 45pt 10pt 10pt;
 }
-.square11 {
+.square_11 {
 	left: 225pt;
 	top: 325pt;
 	border-radius: 10pt 10pt 10pt 45pt;
 }
-.square12 {
+.square_12 {
 	left: 225pt;
 	top: 225pt;
 	border-radius: 10pt;
 }
-.square13 {
+.square_13 {
 	left: 225pt;
 	top: 125pt;
 	border-radius: 10pt;
 }
-.square14 {
+.square_14 {
 	left: 225pt;
 	top: 25pt;
 	border-radius: 45pt 10pt 10pt 10pt;
 }
-.square15 {
+.square_15 {
 	left: 325pt;
 	top: 25pt;
 	border-radius: 10pt;
 }
-.square16 {
+.square_16 {
 	left: 425pt;
 	top: 25pt;
 	border-radius: 10pt;
 }
-.square17 {
+.square_17 {
 	left: 525pt;
 	top: 25pt;
 	border-radius: 10pt;
 }
-.square18 {
+.square_18 {
 	left: 625pt;
 	top: 25pt;
 	border-radius: 10pt;
 }
-.square19 {
+.square_19 {
 	left: 725pt;
 	top: 25pt;
 	border-radius: 10pt;
 }
-.square20 {
+.square_20 {
 	left: 825pt;
 	top: 25pt;
 	border-radius: 10pt;
 }
-.square21 {
+.square_21 {
 	left: 925pt;
 	top: 25pt;
 	border-radius: 10pt 45pt 10pt 10pt;
 }
-.square22 {
+.square_22 {
 	left: 925pt;
 	top: 125pt;
 	border-radius: 10pt;
 }
-.square23 {
+.square_23 {
 	left: 925pt;
 	top: 225pt;
 	border-radius: 10pt 10pt 45pt 10pt;
 }
-.square24 {
+.square_24 {
 	left: 825pt;
 	top: 225pt;
 	border-radius: 10pt;
 }
-.square25 {
+.square_25 {
 	left: 725pt;
 	top: 225pt;
 	border-radius: 10pt;
 }
-.square26 {
+.square_26 {
 	left: 625pt;
 	top: 225pt;
 	border-radius: 45pt 10pt 10pt 10pt;
 }
-.square27 {
+.square_27 {
 	left: 625pt;
 	top: 325pt;
 	border-radius: 10pt 10pt 45pt 10pt;
 }
-.square28 {
+.square_28 {
 	left: 525pt;
 	top: 325pt;
 	border-radius: 45pt 10pt 10pt 10pt;
 }
-.square29 {
+.square_29 {
 	left: 525pt;
 	top: 425pt;
 	border-radius: 10pt;
 }
-.square30 {
+.square_30 {
 	left: 525pt;
 	top: 525pt;
 	border-radius: 10pt 10pt 10pt 45pt;
 }
-.square31 {
+.square_31 {
 	left: 625pt;
 	top: 525pt;
 	border-radius: 10pt;
 }
-.square32 {
+.square_32 {
 	left: 725pt;
 	top: 525pt;
 	border-radius: 10pt;
 }
-.square33 {
+.square_33 {
 	left: 825pt;
 	top: 525pt;
 	border-radius: 10pt;
 }
-.square34 {
+.square_34 {
 	left: 925pt;
 	top: 525pt;
 	border-radius : 10pt 45pt 45pt 10pt;
