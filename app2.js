@@ -2,37 +2,37 @@ console.log('testing')
 
 
 const problemCardDeck = [
-	{message: `GO FORWARD!`, action: movePlayer(1)},
-	{message: `MOVE AHEAD!`, action: movePlayer(1)},
-	{message: `TRY TO DETECT IT!`, action: movePlayer(1)},
-	{message: `WHEN A GOOD TIME TURNS AROUND, YOU MUST WHIP IT!`, action: movePlayer(-1)},
-	{message: `BEFORE THE CREAM SITS OUT TOO LONG, YOU MUST WHIP IT!`, action: movePlayer(-1)},
-	{message: `SHAPE IT UP!`, action: movePlayer(-1)},
-	{message: `WHEN A PROBLEM COMES ALONG, YOU MUST WHIP IT!`, action: movePlayer(0)},
-	{message: `CRACK THAT WHIP! GIVE THE PAST THE SLIP!`, action: movePlayer(0)},
-	{message: `YOU WILL NEVER LIVE IT DOWN, UNTIL YOU WHIP IT!`, action: movePlayer(0)},
-	{message: `WHIP IT, INTO SHAPE!`, action: goAgain()},
-	{message: `IT'S NOT TOO LATE, TO WHIP IT!`, action: goAgain()},
-	{message: `WHIP IT GOOD!`, action: goAgain()},
-	{message: `WHEN SOMETHING'S GOING WRONG, YOU MUST WHIP IT!`, action: loseTurn()},
-	{message: `NO ONE GETS AWAY, UNTIL THE WHIP IT!`, action: loseTurn()},
-	{message: `STEP ON A CRACK, BREAK YOUR MAMA'S BACK!`, action: loseTurn()},
+	{index: 0, message: `GO FORWARD!`, action: movePlayer(1)},
+	{index: 1, message: `MOVE AHEAD!`, action: movePlayer(1)},
+	{index: 2, message: `TRY TO DETECT IT!`, action: movePlayer(1)},
+	{index: 3, message: `WHEN A GOOD TIME TURNS AROUND, YOU MUST WHIP IT!`, action: movePlayer(-1)},
+	{index: 4, message: `BEFORE THE CREAM SITS OUT TOO LONG, YOU MUST WHIP IT!`, action: movePlayer(-1)},
+	{index: 5, message: `SHAPE IT UP!`, action: movePlayer(-1)},
+	{index: 6, message: `WHEN A PROBLEM COMES ALONG, YOU MUST WHIP IT!`, action: movePlayer(0)},
+	{index: 7, message: `CRACK THAT WHIP! GIVE THE PAST THE SLIP!`, action: movePlayer(0)},
+	{index: 8, message: `YOU WILL NEVER LIVE IT DOWN, UNTIL YOU WHIP IT!`, action: movePlayer(0)},
+	{index: 9, message: `WHIP IT, INTO SHAPE!`, action: goAgain()},
+	{index: 10, message: `IT'S NOT TOO LATE, TO WHIP IT!`, action: goAgain()},
+	{index: 11, message: `WHIP IT GOOD!`, action: goAgain()},
+	{index: 12, message: `WHEN SOMETHING'S GOING WRONG, YOU MUST WHIP IT!`, action: loseTurn()},
+	{index: 13, message: `NO ONE GETS AWAY, UNTIL THE WHIP IT!`, action: loseTurn()},
+	{index: 14, message: `STEP ON A CRACK, BREAK YOUR MAMA'S BACK!`, action: loseTurn()},
 ]
 
 const dieSides = [
-	{message: 'ONE', action: movePlayer(1)},
-	{message: 'TWO', action: movePlayer(2)},
-	{message: 'PROBLEM', action: problemCardDraw()},
+	{face: 'ONE', action: movePlayer(1)},
+	{face: 'TWO', action: movePlayer(2)},
+	{face: 'PROBLEM', action: problemCardDraw()},
 ]
 
-const player1 {
+const player1 = {
 	color: '',
-	currentSquare: .square_0,
+	currentSquare: '.square_0',
 }
 
-const player2 {
+const player2 = {
 	color: '',
-	currentSquare: .square_0,
+	currentSquare: '.square_0',
 }
 
 
@@ -138,9 +138,9 @@ const whipCrack = new Audio(whipcrack.mp3)
 	})
 } */
 
-let logoButton = ${#whipItLogo};
+let logoButton = document.getElementById(whipItLogo);
 
-#whipItLogo.addEventListener('click', () => {})
+logoButton.addEventListener('click', () => {
 	whipCrack.play();
 	})
 
