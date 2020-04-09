@@ -105,7 +105,17 @@ h2 {
 	/* box-shadow: 6pt 6pt 6pt rgba(0, 0, 0, 0.75); */
 }
 
-#die {
+.oneDie {
+	display: none;
+	transform: rotate(45deg);
+}
+
+.twoDie {
+	display: none;
+	transform: rotate(45deg);
+}
+
+.problemDie {
 	position: relative;
 	left: 160pt;
 	top: 270pt;

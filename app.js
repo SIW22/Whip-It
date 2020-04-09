@@ -4,8 +4,92 @@ console.log('testing')
 
 //localStorage.setItem('test','this is working');
 
-function playerSelect() {
-	if (document.getElementById(onePlayer).addEventListener('click', () => { // on button click
+const colorOptions = ['black','yellow','orange','red'];
+
+const onePlayerButton = document.querySelector('#onePlayer');
+onePlayerButton.addEventListener('click', () => {
+	localStorage.setItem('numberOfPlayers', '1'); // store number of players
+	// document.querySelector('.colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR";
+	console.log('One player clicked');
+	// Player One Selects Color
+	document.querySelector('#black').addEventListener('click', () => {
+		console.log('black was clicked');
+		localStorage.setItem('color', colorOptions[0]);
+	}) 
+	document.querySelector('#yellow').addEventListener('click', () => {
+		console.log('yellow was clicked');
+		localStorage.setItem('color', colorOptions[1]);
+	})
+	document.querySelector('#orange').addEventListener('click', () => {
+		console.log('orange was clicked');
+		localStorage.setItem('color', colorOptions[2]);
+	}) 
+	document.querySelector('#red').addEventListener('click', () => {
+		console.log('red was clicked');
+		localStorage.setItem('color', colorOptions[3]);
+	})
+
+})
+
+const twoPlayerButton = document.querySelector('#twoPlayer');
+twoPlayerButton.addEventListener('click', () => {
+	localStorage.setItem('numberOfPlayers', '2'); // store number of players
+	document.querySelector('.colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR"; // update text
+	console.log('Two player clicked');
+	// Player One Selects Color
+	document.querySelector('#black').addEventListener('click', () => {
+		console.log('black was clicked');
+		localStorage.setItem('color1', colorOptions[0]);
+	}) 
+	document.querySelector('#yellow').addEventListener('click', () => {
+		console.log('yellow was clicked');
+		localStorage.setItem('color1', colorOptions[1]);
+	})
+	document.querySelector('#orange').addEventListener('click', () => {
+		console.log('orange was clicked');
+		localStorage.setItem('color1', colorOptions[2]);
+	}) 
+	document.querySelector('#red').addEventListener('click', () => {
+		console.log('red was clicked');
+		localStorage.setItem('color1', colorOptions[3]);
+	})
+	// Pause and wait for input? 
+	// Player Two Selects Color
+	document.querySelector('.colorPrompt').innerHTML = "PLAYER TWO, CHOOSE A COLOR"; // update text
+	console.log('Two player clicked');
+
+	document.querySelector('#black').addEventListener('click', () => {
+		console.log('black was clicked');
+		localStorage.setItem('color2', colorOptions[0]);
+	}) 
+	document.querySelector('#yellow').addEventListener('click', () => {
+		console.log('yellow was clicked');
+		localStorage.setItem('color2', colorOptions[1]);
+	})
+	document.querySelector('#orange').addEventListener('click', () => {
+		console.log('orange was clicked');
+		localStorage.setItem('color2', colorOptions[2]);
+	}) 
+	document.querySelector('#red').addEventListener('click', () => {
+		console.log('red was clicked');
+		localStorage.setItem('color2', colorOptions[3]);
+	})
+})
+
+if (localStorage.getItem('numberOfPlayers', '1') 
+	&& (localStorage.getItem('color', 'black')) 
+	|| (localStorage.getItem('color', 'yellow')) 
+	|| (localStorage.getItem('color', 'orange')) 
+	|| (localStorage.getItem('color', 'red'))) {
+	console.log('onto the game')
+	//str.link('board.html');
+}
+
+
+
+
+ /* function playerSelect() {
+	(document.getElementById(onePlayer).addEventListener('click', () => { // on button click
 		localStorage.setItem('numberOfPlayers:', 1); // store number of players
 		document.getElementsByClassName('colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR"; // update text on page
 		colorSelect(); // run color select program
@@ -21,22 +105,6 @@ function playerSelect() {
 			localStorage.setItem('player2ColorChoice', 'arrNum'); // store color choice
 			//to add - wait 10 seconds for input, then pick random color
 		})
-	}
+	} */
 
-const colorOptions = ['black','yellow','orange','red'];
-
-function colorSelect(arrNum) { 
-	if (document.querySelector('#black').addEventListener)('click', () => {
-		// let arrNum = colorOptions[0];
-		return colorOptions[0];
-	}) else if 
-		(document.querySelector('#yellow').addEventListener)('click', () => { 
-		return colorOptions[1];
-	}) else if 
-		(document.querySelector('#orange').addEventListener)('click', () => {
-		return colorOptions[2];
-	}) else if 
-		(document.querySelector('#red').addEventListener)('click', () => { 
-		return colorOptions[3];
-	})
-}
+// if two player button is clicked, 

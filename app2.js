@@ -43,9 +43,8 @@ const player2 = {
 // input player one color choice
 // input player two color choice
 
-console.log(localStorage.getItem('test'));
+let num = localStorage.getItem('numberOfPlayers');
 
-console.log(localStorage.getItem('numberOfPlayers'));
 
 function gameMode(num) {
 	if (playerSelect(num) === 1) {
@@ -59,7 +58,7 @@ function gameMode(num) {
 
 function onePlayerGameProtocol() {
 	// adds color choice to object
-	localStorage.getItem()
+	playerOne.color = localStorage.getItem('color');
 	// player clicks die to roll
 	// player piece moves or a card is drawn
 	// player must click to resolve card
@@ -69,6 +68,8 @@ function onePlayerGameProtocol() {
 }
 
 function twoPlayerGameProtocol() {
+	playerOne.color = localStorage.getItem('color1');
+	playerTwo.colot = localStorage.getItem('color2');
 	// player one takes a turn
 	// player two takes a turn
 	// repeats until square 34 is reached by either player.
@@ -111,10 +112,10 @@ let currentSquare = ('.0_square'); //starting square
 
 function movePlayer(playerNum, distance) { //moves spaces based on input
 	// player starts on square_0. and cannot back up from there;
-	if(currentSquare === '.square_0') { // check if player is on 0_square
+	if(currentSquare === '.square_0') { // check if player is on square_0
 		return currentSquare;
 	} else 
-		let locNum = currentSquare.replace(".square_", ""); // remove non-numbers
+		currentSquare.replace(".", "").replace('square', '').replace('_',''); // remove non-numbers
 		let parsedNum = parseFloat(locNum, 10); // create number from string
 		if (parsedNum === 0) {
 			let divLoc = currentSquare;
@@ -123,7 +124,7 @@ function movePlayer(playerNum, distance) { //moves spaces based on input
 			let divLoc = ('.' + newLocNum + '_square') // add number back to string
 			let newCurrentSquare = divLoc  // append to new div
 			document.getElementsByClassName(divLoc).append.getElementsByClassName(playerPiece1);
-
+		}	
 }
 
 	currentSquare = ('.square_0')
@@ -161,31 +162,31 @@ let sumLoc = (parsedNum + '_square') // add number back to string
 let newCurrentSquare = sumLoc 
  */
 
-
+/* 
 let children = document.getElementsByClassName('gameBoard');
-	children.hasChildNodes());
-
+	children.hasChildNodes();
+ */
 
 
 	// use int to move current player position on the board
 	// append player piece to different square based on int
-}
 
+/* 
 document.getElementsByClassName(p1forward).addEventListener() {
 	document.querySelector(nextParentNode).append(playerOne);
 } 
-
+ */
 
 
 /* Sound Effect */
 
-const whipCrack = new Audio(whipcrack.mp3)
+const whipCrack = new Audio(whipcrack.mp3);
 
 let logoButton = document.getElementById(whipItLogo);
 
 logoButton.addEventListener('click', () => {
 	whipCrack.play();
-	})
+})
 
 
 	/* Game Play */
