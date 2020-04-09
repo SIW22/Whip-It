@@ -45,6 +45,8 @@ const player2 {
 
 console.log(localStorage.getItem('test'));
 
+console.log(localStorage.getItem('numberOfPlayers'));
+
 function gameMode(num) {
 	if (playerSelect(num) === 1) {
 		onePlayerGameProtocol();
