@@ -20,9 +20,9 @@ const problemCardDeck = [
 ]
 
 const dieSides = [
-	{face: 'ONE', action: movePlayer(1)},
-	{face: 'TWO', action: movePlayer(2)},
-	{face: 'PROBLEM', action: problemCardDraw()},
+	{face: 'ONE', action: movePlayer(1), img: 'oneDie.svg'},
+	{face: 'TWO', action: movePlayer(2), img: 'twoDie.svg'},
+	{face: 'PROBLEM', action: problemCardDraw(), img: 'problemDie.svg'},
 ]
 
 const player1 = {
@@ -77,7 +77,14 @@ function twoPlayerGameProtocol() {
 
 	// display whose turn it is during game? 
 }
-/* 
+
+const dieClick = document.querySelector('.die');
+dieClick.addEventListener('click', () => { // change image
+
+
+
+
+
 function dieRoll(arr) { //locates a random die side from array
 	if (arr[randomize(arr)] === 0) {
 		let currentDie = document.getElementById('die');
@@ -90,7 +97,7 @@ function dieRoll(arr) { //locates a random die side from array
 		currentDie("problemDie.svg") // how to link this properly?
 	}
 	return arr[randomize(arr)];
-} */
+}
 
 function problemCardDraw(arr) { //locates a random card from a ProblemCardDeck
 	return arr[randomize(arr)];
