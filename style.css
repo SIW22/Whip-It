@@ -68,31 +68,31 @@ h2 {
 .colors {
 	position: absolute;
 	z-index: 70;
-	padding: 20px 70px;
+	padding: 10px 70px;
 }
 
 #black {
 	left: 308;
 	top: 322;
-	padding: 15px;
+	padding: 0px 15px;
 }
 
 #yellow {
 	left: 422;
 	top: 322;
-	padding: 15px;
+	padding: 0px 15px;
 }
 
 #orange {
 	left: 536;
 	top: 322;
-	padding: 15px;
+	padding: 0px 15px;
 }
 
 #red {
 	left: 650;
 	top: 322;
-	padding: 15px;
+	padding: 0px 15px;
 }
 
 /* Board.html */
@@ -158,17 +158,15 @@ h2 {
 	height: 125pt;
 }
 
-/* .square_0, .square_1, .square_2, .square_3, .square_4, .square_5, .square_6, .square_7, .square_8, .square_9, .square_10, .square_11, .square_12, .square_13, .square_14, .square_15, .square_16, .square_17, .square_18, .square_19, .square_20, .square_21, .square_22, .square_23, .square_24, .square_25, .square_26, .square_27, .square_28, .square_29, .square_30, .square_31, .square_32, .square_33, .square_34 {
- */
-
-.0_square, .square_1, .square_2, .square_3, .square_4, .square_5, .square_6, .square_7, .square_8, .square_9, .square_10, .square_11, .square_12, .square_13, .square_14, .square_15, .square_16, .square_17, .square_18, .square_19, .square_20, .square_21, .square_22, .square_23, .square_24, .square_25, .square_26, .square_27, .square_28, .square_29, .square_30, .square_31, .square_32, .square_33, .square_34 {
+ 
+.square_0, .square_1, .square_2, .square_3, .square_4, .square_5, .square_6, .square_7, .square_8, .square_9, .square_10, .square_11, .square_12, .square_13, .square_14, .square_15, .square_16, .square_17, .square_18, .square_19, .square_20, .square_21, .square_22, .square_23, .square_24, .square_25, .square_26, .square_27, .square_28, .square_29, .square_30, .square_31, .square_32, .square_33, .square_34 {
 	background: #B3B3B3;
 	position: absolute ;
 	width: 90pt;
 	height: 90pt;
 	z-index: 1;
 }
-.0_square {
+.square_0 {
 	left: 25pt;
 	top: 25pt;
 	border-radius: 45pt 45pt 10pt 10pt;

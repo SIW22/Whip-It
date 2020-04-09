@@ -25,19 +25,19 @@ function playerSelect() {
 }	
 
 function colorSelect(arrNum) { 
-	if (document.querySelector('#black').addEventListener)('click', function() {
+	if (document.querySelector('#black').addEventListener)('click', () => {
 		// let arrNum = colorOptions[0];
 		return colorOptions[0];
-	} else if 
-		(document.querySelector('#yellow').addEventListener)('click', function() { 
+	}) else if 
+		(document.querySelector('#yellow').addEventListener)('click', () => { 
 		return colorOptions[1];
-	} else if 
-		(document.querySelector('#orange').addEventListener)('click', function() {
+	}) else if 
+		(document.querySelector('#orange').addEventListener)('click', () => {
 		return colorOptions[2];
-	} else if 
-		(document.querySelector('#red').addEventListener)('click', function() { 
+	}) else if 
+		(document.querySelector('#red').addEventListener)('click', () => { 
 		return colorOptions[3];
-	}
+	})
 }
 
 const colorOptions = ['black','yellow','orange','red'];

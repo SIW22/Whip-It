@@ -111,10 +111,10 @@ let currentSquare = ('.0_square'); //starting square
 
 function movePlayer(playerNum, distance) { //moves spaces based on input
 	// player starts on square_0. and cannot back up from there;
-	if(currentSquare === '0_Square') { // check if player is on 0_square
+	if(currentSquare === '.square_0') { // check if player is on 0_square
 		return currentSquare;
 	} else 
-		let locNum = currentSquare.replace(".", ""); // remove period
+		let locNum = currentSquare.replace(".square_", ""); // remove non-numbers
 		let parsedNum = parseFloat(locNum, 10); // create number from string
 		if (parsedNum === 0) {
 			let divLoc = currentSquare;
@@ -126,7 +126,7 @@ function movePlayer(playerNum, distance) { //moves spaces based on input
 
 }
 
-	currentSquare = ('.0_square')
+	currentSquare = ('.square_0')
 	if (currentSquare === 0) {
 		if (distance >= 0) {
 			//add distance to current appended square
@@ -139,14 +139,14 @@ function movePlayer(playerNum, distance) { //moves spaces based on input
 	let p2currentSq = playerTwo[1];
 
 
-let currentSquare = ('.0_square'); //starting square
+// let currentSquare = ('.square_0'); //starting square
 
-let locNum = currentSquare.replace(".", ""); // remove period
-let parsedNum = parseFloat(locNum, 10); // create number from string
-if (parsedNum === 0) {
-	let newLocNum = parsedNum + moveDistance // add distance from card or die
-	let sumLoc = (newLocNum + '_square') // add number back to string
-	let newCurrentSquare = sumLoc  
+// let locNum = currentSquare.replace(".", ""); // remove period
+// let parsedNum = parseFloat(locNum, 10); // create number from string
+// if (parsedNum === 0) {
+// 	let newLocNum = parsedNum + moveDistance // add distance from card or die
+// 	let sumLoc = (newLocNum + '_square') // add number back to string
+// 	let newCurrentSquare = sumLoc  
 
 
 
