@@ -14,22 +14,28 @@ function playerSelect() {
 		localStorage.setItem('numberOfPlayers:', 2);
 		document.getElementsByClassName('colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR"; 
 		colorSelect();
-		localStorage.setItem('player1ColorChoice', '');
+		localStorage.setItem('player1ColorChoice', 'arrNum');
 		//wait 10 seconds for input, then pick random color
 		document.getElementsByClassName('colorPrompt').innerHTML = "PLAYER TWO, CHOOSE A COLOR"; 
-		colorSelect();
-		localStorage.setItem('player2ColorChoice', '');
+		colorSelect('arrNum');
+		localStorage.setItem('player2ColorChoice', 'arrNum');
 		//wait 10 seconds for input, then pick random color
 		}
 	}
 
-	// if (document.querySelector(button)).addEventListener('click', function() {
-	// 	$('h2').attr('id', 'name').append('Skot Walker');
-	// })
-
-function colorSelect() { 
-	document.querySelector('black').addEventListener('click', function() {
-		
+function colorSelect(arrNum) { 
+	if document.querySelector('#black').addEventListener('click', function() {
+		let arrNum = colorOptions[0];
+		return colorOptions[0];
+	}) else if 
+		document.querySelector('#yellow').addEventListener('click', function() { 
+		return colorOptions[1];
+	}) else if 
+		document.querySelector('#orange').addEventListener('click', function() {
+		return colorOptions[2];
+	}) else if
+		document.querySelector('#red').addEventListener('click', function() { 
+		return colorOptions[3];
 	})
 }
 
