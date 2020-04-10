@@ -42,23 +42,27 @@ const player2 = {
 	currentSquareClass: '.square_0'
 }
 
-let list = document.getElementsByClassName('.sq');
 
 function movePlayer(player, distance) {
 	let newSquare = player.currentNumber + distance;
 	player.currentNumber = newSquare;
 	player.currentSquareClass = ('.square_' + newSquare);
 	let location = document.querySelector(player.currentSquareClass);
-	console.log(player.currentSquareClass);
+	// console.log(player.currentSquareClass);
 	let playerPiece = document.querySelector(player.playerClass);
 	location.append(playerPiece);
 	
-	for (i = 0; i < list.length; i++) {
-		if (list[i].children.length >= 2) {
-			document.getElementByClass('playerPiece_1').removeProperty('position', 'absolute');
-			document.getElementByClass('playerPiece_1').removeAttribute('position', 'absolute');
-			document.getElementByClass('playerPiece_1').setAttribute('display', 'relative');
-			console.log(list[i]);
+	let list = document.querySelectorAll('.sq');
+
+
+	const sqArray = [...list];
+
+	for (i = 0; i < sqArray.length; i++) {
+		if (sqArray[i].children.length < 2) {
+			console.log(sqArray[i].children);
+			document.querySelector('.playerPiece_1').classList.add('cohab');
+			document.querySelector('.playerPiece_2').classList.add('cohab');
+			// console.log(sqArray[i]);
 		}
 	}
 }
@@ -122,16 +126,16 @@ function dieRoll(dieArray) { //locates a random die side from array
 	dieResult = (Math.floor(Math.random()*3));
 	randomDeg = (Math.floor(Math.random()*360));
 	if (dieResult === 0) {
-		currentDie.setAttribute('src', 'graphics/oneDie.svg')
-		// currentDie.setAttribute('transform', `rotate(${randomDeg}deg)`)
+		currentDie.setAttribute('src', 'graphics/oneDie.svg');
+		currentDie.style.transform = `rotate(${randomDeg}deg)`;
 		console.log('Rolled a 1!');
 	} else if (dieResult === 1) {
-		currentDie.setAttribute('src', 'graphics/twoDie.svg')
-		// currentDie.setAttribute('transform', 'rotate(${randomDeg}deg)')
+		currentDie.setAttribute('src', 'graphics/twoDie.svg');
+		currentDie.style.transform = `rotate(${randomDeg}deg)`;
 		console.log('Rolled a 2!');
 	} else if (dieResult === 2) {
 		currentDie.setAttribute('src', 'graphics/problemDie.svg')
-		// currentDie.setAttribute('transform', 'rotate(${randomDeg}deg)')
+		currentDie.style.transform = `rotate(${randomDeg}deg)`;
 		console.log('Uh oh!');
 	}
 }
@@ -201,7 +205,7 @@ console.log(logo);
 logo.addEventListener('click', () => {
 	whipCrack.play();
 
-	document.querySelector('.newCard').parentNode.removeChild('newCard');
+	document.querySelector('.newCard').remove();
 	// document.querySelector('.pulledProblemCard').parentNode.removeChild('.newCard');
 	console.log('Crack that Whip!');
 })
@@ -212,6 +216,9 @@ let notes = document.querySelector('.music');
 
 notes.addEventListener('click', () => {
 	soundtrack.play();
+	setTimeout(() => {
+		soundtrack.pause();
+	}, 5000);
 	console.log('I say Whip It!');
 })
 
