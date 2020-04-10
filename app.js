@@ -9,7 +9,7 @@ const colorOptions = ['black','yellow','orange','red'];
 const onePlayerButton = document.querySelector('#onePlayer');
 onePlayerButton.addEventListener('click', () => {
 	localStorage.setItem('numberOfPlayers', '1'); // store number of players
-	// document.querySelector('.colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR";
+	document.querySelector('.colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR";
 	console.log('One player clicked');
 	// Player One Selects Color
 	document.querySelector('#black').addEventListener('click', () => {
@@ -85,6 +85,19 @@ if (localStorage.getItem('numberOfPlayers', '1')
 	//str.link('board.html');
 }
 
+
+
+/* Sound Effect */
+
+const whipCrack = new Audio('whipcrack.wav');
+
+let navSounds = document.querySelector('.nav');
+console.log('Whip It!');
+
+navSounds.addEventListener('click', () => {
+	whipCrack.play();
+	console.log('Crack that Whip!');
+})
 
 
 

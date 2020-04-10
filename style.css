@@ -1,9 +1,9 @@
 * {
-	margin: none;
+	margin: o auto;
 }
 
 body {
-	background-color: #a1a1a1;
+	background-color: #727272;
 	box-sizing: border-box;
 }
 
@@ -22,7 +22,7 @@ body {
 	box-shadow: 8pt 8pt 8pt rgba(0, 0, 0, 0.75);
 }
 
-#onePlayer, #twoPlayer {
+#onePlayer, #twoPlayer, .board {
 	font-family: Baloo, sans-serif;
 	font-size: 24pt;
 	color: white;
@@ -32,7 +32,19 @@ body {
 	box-shadow: 4pt 4pt 4pt rgba(0, 0, 0, 0.75);
 	position: relative;
 	align-items: center;
-	margin: 60pt 50pt 20pt 50pt;
+	margin: 50pt 50pt 0pt 50pt;
+}
+
+.board {
+	font-size: 18pt;
+	padding: 4px 18px;
+	position: absolute;
+	left: 530px;
+	top: 450px;
+}
+
+.board:visited {
+	color: white;
 }
 
 #onePlayer {
@@ -105,25 +117,17 @@ h2 {
 	/* box-shadow: 6pt 6pt 6pt rgba(0, 0, 0, 0.75); */
 }
 
-./* oneDie {
-	display: none;
-	transform: rotate(45deg);
-}
-
-.twoDie {
-	display: none;
-	transform: rotate(45deg);
-}
-
-.problemDie {
+#problemDie {
 	position: relative;
 	left: 160pt;
 	top: 270pt;
 	z-index: 50;
 	transform: rotate(45deg);
-} */
+	border-radius: 6pt;
+	box-shadow: 12pt 4pt 4pt rgba(0, 0, 0, 0.65);
+}
 
-.board, .win, .again, .p1Backward, .p1Forward, .p2Backward, .p2Forward {
+.board, .win, .music, .p1Backward, .p1Forward, .p2Backward, .p2Forward {
 	position: relative;
 	top: 400pt;
 }
@@ -140,45 +144,35 @@ h2 {
 	display: none;
 }
 
-.container {
-	width: 1042pt;
-	height: 640pt;
-	margin: 0 auto;
-	background-color: white;
-	position: absolute;
-}
-
-/* .gameBoard {
-	display: flex;
-	height: 100%;
-	padding-top: 56.25;
-	border-radius: 10px;
-	box-sizing: border-box;
-	background-color: white;
-	align-items: center;
-	z-index: 0;
-} */
-
 .problemCards {
-	background: white;
+	background: gray;
 	position: absolute ;
+	border: 2px black dashed;
 	left: 758pt;
 	top: 357pt;
 	width: 225pt;
 	height: 125pt;
 }
 
+#problemCard {
+	box-shadow: 2pt 2pt 2pt rgba(0, 0, 0, 0.75);
+	transform: rotate(2deg);
+}
+
  
 .square_0, .square_1, .square_2, .square_3, .square_4, .square_5, .square_6, .square_7, .square_8, .square_9, .square_10, .square_11, .square_12, .square_13, .square_14, .square_15, .square_16, .square_17, .square_18, .square_19, .square_20, .square_21, .square_22, .square_23, .square_24, .square_25, .square_26, .square_27, .square_28, .square_29, .square_30, .square_31, .square_32, .square_33, .square_34 {
 	background: #B3B3B3;
-	position: absolute ;
+	position: absolute;
 	width: 90pt;
 	height: 90pt;
 	z-index: 1;
+	box-shadow: 0pt 0pt 8pt rgba(180, 0, 0, 0.75);
+	/* border: 2pt darkred solid; */
 }
 .square_0 {
 	left: 25pt;
 	top: 25pt;
+	background: rgba(180, 0, 0);
 	border-radius: 45pt 45pt 10pt 10pt;
 }
 .square_1 {
@@ -195,6 +189,7 @@ h2 {
 	left: 25pt;
 	top: 325pt;
 	border-radius: 10pt;
+	background: rgb(146, 146, 146);
 }
 .square_4 {
 	left: 25pt;
@@ -210,6 +205,7 @@ h2 {
 	left: 125pt;
 	top: 525pt;
 	border-radius: 10pt;
+	background: rgb(146, 146, 146);
 }
 .square_7 {
 	left: 225pt;
@@ -225,6 +221,7 @@ h2 {
 	left: 325pt;
 	top: 425pt;
 	border-radius: 10pt;
+	background: rgb(146, 146, 146);
 }
 .square_10 {
 	left: 325pt;
@@ -240,6 +237,7 @@ h2 {
 	left: 225pt;
 	top: 225pt;
 	border-radius: 10pt;
+	background: rgb(146, 146, 146);
 }
 .square_13 {
 	left: 225pt;
@@ -255,6 +253,7 @@ h2 {
 	left: 325pt;
 	top: 25pt;
 	border-radius: 10pt;
+	background: rgb(146, 146, 146);
 }
 .square_16 {
 	left: 425pt;
@@ -270,6 +269,7 @@ h2 {
 	left: 625pt;
 	top: 25pt;
 	border-radius: 10pt;
+	background: rgb(146, 146, 146);
 }
 .square_19 {
 	left: 725pt;
@@ -285,6 +285,7 @@ h2 {
 	left: 925pt;
 	top: 25pt;
 	border-radius: 10pt 45pt 10pt 10pt;
+	background: rgb(146, 146, 146);
 }
 .square_22 {
 	left: 925pt;
@@ -300,6 +301,7 @@ h2 {
 	left: 825pt;
 	top: 225pt;
 	border-radius: 10pt;
+	background: rgb(146, 146, 146);
 }
 .square_25 {
 	left: 725pt;
@@ -315,6 +317,7 @@ h2 {
 	left: 625pt;
 	top: 325pt;
 	border-radius: 10pt 10pt 45pt 10pt;
+	background: rgb(146, 146, 146);
 }
 .square_28 {
 	left: 525pt;
@@ -330,6 +333,7 @@ h2 {
 	left: 525pt;
 	top: 525pt;
 	border-radius: 10pt 10pt 10pt 45pt;
+	background: rgb(146, 146, 146);
 }
 .square_31 {
 	left: 625pt;
@@ -345,11 +349,24 @@ h2 {
 	left: 825pt;
 	top: 525pt;
 	border-radius: 10pt;
+	background: rgb(146, 146, 146);
 }
 .square_34 {
 	left: 925pt;
 	top: 525pt;
 	border-radius : 10pt 45pt 45pt 10pt;
+	background: rgb(248, 244, 3);
 }
 
 /* Victory.html */
+
+h1 {
+	text-align: center;
+	font-family: Baloo, sans-serif;
+	font-size: 36pt;
+}
+
+.again {
+	position: relative;
+	top: 400pt;
+}

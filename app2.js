@@ -1,40 +1,88 @@
 console.log('testing')
 
-
 const problemCardDeck = [
-	{index: 0, message: `GO FORWARD!`, action: movePlayer(1)},
-	{index: 1, message: `MOVE AHEAD!`, action: movePlayer(1)},
-	{index: 2, message: `TRY TO DETECT IT!`, action: movePlayer(1)},
-	{index: 3, message: `WHEN A GOOD TIME TURNS AROUND, YOU MUST WHIP IT!`, action: movePlayer(-1)},
-	{index: 4, message: `BEFORE THE CREAM SITS OUT TOO LONG, YOU MUST WHIP IT!`, action: movePlayer(-1)},
-	{index: 5, message: `SHAPE IT UP!`, action: movePlayer(-1)},
-	{index: 6, message: `WHEN A PROBLEM COMES ALONG, YOU MUST WHIP IT!`, action: movePlayer(0)},
-	{index: 7, message: `CRACK THAT WHIP! GIVE THE PAST THE SLIP!`, action: movePlayer(0)},
-	{index: 8, message: `YOU WILL NEVER LIVE IT DOWN, UNTIL YOU WHIP IT!`, action: movePlayer(0)},
-	{index: 9, message: `WHIP IT, INTO SHAPE!`, action: goAgain()},
-	{index: 10, message: `IT'S NOT TOO LATE, TO WHIP IT!`, action: goAgain()},
-	{index: 11, message: `WHIP IT GOOD!`, action: goAgain()},
-	{index: 12, message: `WHEN SOMETHING'S GOING WRONG, YOU MUST WHIP IT!`, action: loseTurn()},
-	{index: 13, message: `NO ONE GETS AWAY, UNTIL THE WHIP IT!`, action: loseTurn()},
-	{index: 14, message: `STEP ON A CRACK, BREAK YOUR MAMA'S BACK!`, action: loseTurn()},
-]
+	{index: 0, message: `GO FORWARD!`, moveAmt: 1},
+	{index: 1, message: `MOVE AHEAD!`, moveAmt: 1},
+	{index: 2, message: `TRY TO DETECT IT!`, moveAmt: 1},
+	{index: 3, message: `WHEN A GOOD TIME TURNS AROUND, YOU MUST WHIP IT!`, moveAmt: -1},
+	{index: 4, message: `BEFORE THE CREAM SITS OUT TOO LONG, YOU MUST WHIP IT!`, moveAmt: -1},
+	{index: 5, message: `SHAPE IT UP!`, moveAmt: -1},
+	{index: 6, message: `WHEN A PROBLEM COMES ALONG, YOU MUST WHIP IT!`, moveAmt: 0},
+	{index: 7, message: `CRACK THAT WHIP! GIVE THE PAST THE SLIP!`, moveAmt: 0},
+	{index: 8, message: `YOU WILL NEVER LIVE IT DOWN, UNTIL YOU WHIP IT!`, moveAmt: 0},
+	{index: 9, message: `WHIP IT, INTO SHAPE!`, moveAmt: goAgain()},
+	{index: 10, message: `IT'S NOT TOO LATE, TO WHIP IT!`, moveAmt: goAgain()},
+	{index: 11, message: `WHIP IT GOOD!`, moveAmt: goAgain()},
+	{index: 12, message: `WHEN SOMETHING'S GOING WRONG, YOU MUST WHIP IT!`, moveAmt: loseTurn()},
+	{index: 13, message: `NO ONE GETS AWAY, UNTIL THE WHIP IT!`, moveAmt: loseTurn()},
+	{index: 14, message: `STEP ON A CRACK, BREAK YOUR MAMA'S BACK!`, moveAmt: loseTurn()},
+];
+let arr = problemCardDeck;
 
 const dieSides = [
-	{face: 'ONE', action: movePlayer(1), img: 'oneDie.svg'},
-	{face: 'TWO', action: movePlayer(2), img: 'twoDie.svg'},
-	{face: 'PROBLEM', action: problemCardDraw(), img: 'problemDie.svg'},
-]
+	{face: 'ONE', img: 'oneDie.svg', moveAmt: 1},
+	{face: 'TWO', img: 'twoDie.svg', moveAmt: 2},
+	{face: 'PROBLEM', img: 'problemDie.svg', moveAmt: 0, action: problemCardDraw},
+];
+
+let dieArray = dieSides;
 
 const player1 = {
 	color: '',
-	currentSquare: '.0.square_0',
+	playerNumber: 1,
+	currentNumber: 0,
+	playerClass: '.playerPiece_1',
+	currentSquareClass: '.square_0'
 }
 
 const player2 = {
 	color: '',
-	currentSquare: '.square_0',
+	playerNumber: 2,
+	currentNumber: 0,
+	playerClass: '.playerPiece_2',
+	currentSquareClass: '.square_0'
 }
 
+let list = document.getElementsByClassName('.sq');
+
+function movePlayer(player, distance) {
+	let newSquare = player.currentNumber + distance;
+	player.currentNumber = newSquare;
+	player.currentSquareClass = ('.square_' + newSquare);
+	let location = document.querySelector(player.currentSquareClass);
+	console.log(player.currentSquareClass);
+	let playerPiece = document.querySelector(player.playerClass);
+	location.append(playerPiece);
+	
+	for (i = 0; i < list.length; i++) {
+		if (list[i].children.length >= 2) {
+			document.getElementByClass('playerPiece_1').removeProperty('position', 'absolute');
+			document.getElementByClass('playerPiece_1').removeAttribute('position', 'absolute');
+			document.getElementByClass('playerPiece_1').setAttribute('display', 'relative');
+			console.log(list[i]);
+		}
+	}
+}
+/*	
+	for (i = 0; i < list.length; i++) {
+		if (list[i].childNode.length === 2) {
+			list[i].setAttribute('display', 'flex-grow');
+			console.log(list[i]);
+			// list[i].style.display = 'flex';
+		}
+	}
+} */
+
+/* Movement Buttons */
+let p1B = document.querySelector('.p1Backward');
+let p1F = document.querySelector('.p1Forward');
+let p2B = document.querySelector('.p2Backward');
+let p2F = document.querySelector('.p2Forward');
+
+p1B.addEventListener('click', () => movePlayer(player1, -1));
+p1F.addEventListener('click', () => movePlayer(player1, 1));
+p2B.addEventListener('click', () => movePlayer(player2, -1));
+p2F.addEventListener('click', () => movePlayer(player2, 1));
 
 /* Game Engine */
 
@@ -69,7 +117,7 @@ function onePlayerGameProtocol() {
 
 function twoPlayerGameProtocol() {
 	playerOne.color = localStorage.getItem('color1');
-	playerTwo.colot = localStorage.getItem('color2');
+	playerTwo.color = localStorage.getItem('color2');
 	// player one takes a turn
 	// player two takes a turn
 	// repeats until square 34 is reached by either player.
@@ -78,33 +126,50 @@ function twoPlayerGameProtocol() {
 	// display whose turn it is during game? 
 }
 
-const dieClick = document.querySelector('.die');
-dieClick.addEventListener('click', () => { // change image
+//childNodes -> array
 
 
+/* for (i = 0; i < )
+ */
 
+let currentDie = document.querySelector('.die');
+/* let turnIndicator = document.querySelector('.currentPlayer') */
 
-
-function dieRoll(arr) { //locates a random die side from array
-	if (arr[randomize(arr)] === 0) {
-		let currentDie = document.getElementById('die');
-		currentDie("oneDie.svg") // how to link this properly?
-	} else if (arr[randomize(arr)] === 1) {
-		let currentDie = document.getElementById('die');
-		currentDie("twoDie.svg") // how to link this properly?
-	} else (arr[randomize(arr)] === 2) {
-		let currentDie = document.getElementById('die');
-		currentDie("problemDie.svg") // how to link this properly?
+currentDie.addEventListener('click', () => {
+	dieRoll(dieArray);
+	if (document.querySelector('.currentPlayer') == `PLAYER ONE'S TURN`) {
+		document.querySelector('.currentPlayer').innerHTML = `PLAYER TWO'S TURN`;
+	console.log("It's PLayer Two's Turn.")
+	} else {
+		document.querySelector('.currentPlayer').innerHTML = `PLAYER ONE'S TURN`;
+		console.log("It's Player One's Turn");
 	}
-	return arr[randomize(arr)];
+	console.log('the die was clicked')
+})
+
+function dieRoll(dieArray) { //locates a random die side from array
+	dieResult = (Math.floor(Math.random()*3));
+	randomdeg = (Math.floor(Math.random()*360));
+	if (dieResult === 0) {
+		currentDie.setAttribute('src', 'oneDie.svg')
+		currentDie.setAttribute('transform', 'rotate(randomDeg)')
+		console.log('Rolled a 1!');
+	} else if (dieResult === 1) {
+		currentDie.setAttribute('src', 'twoDie.svg')
+		currentDie.setAttribute('transform', 'rotate(randomDeg)')
+		console.log('Rolled a 2!');
+	} else if (dieResult === 2) {
+		currentDie.setAttribute('src', 'problemDie.svg')
+		currentDie.setAttribute('transform', 'rotate(randomDeg)')
+		console.log('Uh oh!');
+	}
 }
 
 function problemCardDraw(arr) { //locates a random card from a ProblemCardDeck
 	return arr[randomize(arr)];
 }
-
 function randomize(arr) { //supplies a random number based on length of given array
-	return Math.floor(Math.random()* arr.length);
+	return Math.floor(Math.random()*15);
 }
 
 function goAgain() { //skips next player's turn
@@ -115,85 +180,36 @@ function loseTurn() { //triggers goAgain on otherplayer
 
 }
 
-let currentSquare = ('.0_square'); //starting square
-
-function movePlayer(playerNum, distance) { //moves spaces based on input
-	// player starts on square_0. and cannot back up from there;
-	if(currentSquare === '.square_0') { // check if player is on square_0
-		return currentSquare;
-	} else 
-		currentSquare.replace(".", "").replace('square', '').replace('_',''); // remove non-numbers
-		let parsedNum = parseFloat(locNum, 10); // create number from string
-		if (parsedNum === 0) {
-			let divLoc = currentSquare;
-		} else {
-			let newLocNum = parsedNum + moveDistance // add distance from card or die
-			let divLoc = ('.' + newLocNum + '_square') // add number back to string
-			let newCurrentSquare = divLoc  // append to new div
-			document.getElementsByClassName(divLoc).append.getElementsByClassName(playerPiece1);
-		}	
-}
-
-	currentSquare = ('.square_0')
-	if (currentSquare === 0) {
-		if (distance >= 0) {
-			//add distance to current appended square
-
-		}
-	}
+const problem = document.querySelector('#problemCard');
+problem.addEventListener('click', () => {
+	let pulledProblemCard = document.createElement(tagName[, options]);
+	console.log('Problem Card Deck Accessed!')
+})
 
 
-	let p1currentSq = playerOne[1];
-	let p2currentSq = playerTwo[1];
-
-
-// let currentSquare = ('.square_0'); //starting square
-
-// let locNum = currentSquare.replace(".", ""); // remove period
-// let parsedNum = parseFloat(locNum, 10); // create number from string
-// if (parsedNum === 0) {
-// 	let newLocNum = parsedNum + moveDistance // add distance from card or die
-// 	let sumLoc = (newLocNum + '_square') // add number back to string
-// 	let newCurrentSquare = sumLoc  
-
-
-
-
-/* 
-let currentSquare = ('.0_square'); //starting square
-
-let locNum = currentSquare.replace(".", ""); // remove period
-let parsedNum = parseFloat(locNum, 10); // create number from string
-let newLocNum = parsedNum + moveDistance // add distance from card or die
-let sumLoc = (parsedNum + '_square') // add number back to string
-let newCurrentSquare = sumLoc 
- */
-
-/* 
-let children = document.getElementsByClassName('gameBoard');
-	children.hasChildNodes();
- */
-
-
-	// use int to move current player position on the board
-	// append player piece to different square based on int
-
-/* 
-document.getElementsByClassName(p1forward).addEventListener() {
-	document.querySelector(nextParentNode).append(playerOne);
-} 
- */
 
 
 /* Sound Effect */
 
-const whipCrack = new Audio(whipcrack.mp3);
+const whipCrack = new Audio('whipcrack.wav');
 
-let logoButton = document.getElementById(whipItLogo);
+let logo = document.querySelector('#whipItLogo');
+console.log(logo);
 
-logoButton.addEventListener('click', () => {
+logo.addEventListener('click', () => {
 	whipCrack.play();
+	console.log('Crack that Whip!');
 })
+
+const soundtrack = new Audio('whip_it.wav');
+
+let notes = document.querySelector('.music');
+
+notes.addEventListener('click', () => {
+	soundtrack.play();
+	console.log('I say Whip It!');
+})
+
 
 
 	/* Game Play */

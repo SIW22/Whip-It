@@ -13,48 +13,54 @@
 
 	<div class = 'gameBoard'>
 		<section class = 'boardPath'>
-			<div class = 'square_0'><img class = 'child playerPiece_1' src ='black.svg'></div>
-			<div class = 'square_1'></div>
-			<div class = 'square_2'></div>
-			<div class = 'square_3'></div>
-			<div class = 'square_4'></div>
-			<div class = 'square_5'></div>
-			<div class = 'square_6'></div>
-			<div class = 'square_7'></div>
-			<div class = 'square_8'></div>
-			<div class = 'square_9'></div>
-			<div class = 'square_10'></div>
-			<div class = 'square_11'></div>
-			<div class = 'square_12'></div>
-			<div class = 'square_13'></div>
-			<div class = 'square_14'></div>
-			<div class = 'square_15'></div>
-			<div class = 'square_16'></div>
-			<div class = 'square_17'></div>
-			<div class = 'square_18'></div>
-			<div class = 'square_19'></div>
-			<div class = 'square_20'></div>
-			<div class = 'square_21'></div>
-			<div class = 'square_22'></div>
-			<div class = 'square_23'></div>
-			<div class = 'square_24'></div>
-			<div class = 'square_25'></div>
-			<div class = 'square_26'></div>
-			<div class = 'square_27'><img class = 'child playerPiece_2' src = 'yellow.svg'></div>
-			<div class = 'square_28'></div>
-			<div class = 'square_29'></div>
-			<div class = 'square_30'></div>
-			<div class = 'square_31'></div>
-			<div class = 'square_32'></div>
-			<div class = 'square_33'></div>
-			<div class = 'square_34'></div>
+			<div class = 'square_0'><img class = 'child playerPiece_1' src ='black.svg'></div><img class = 'child playerPiece_2' src = 'yellow.svg'>
+			<div class = 'square_1 sq'></div>
+			<div class = 'square_2 sq'></div>
+			<div class = 'square_3 sq'></div>
+			<div class = 'square_4 sq'></div>
+			<div class = 'square_5 sq'></div>
+			<div class = 'square_6 sq'></div>
+			<div class = 'square_7 sq'></div>
+			<div class = 'square_8 sq'></div>
+			<div class = 'square_9 sq'></div>
+			<div class = 'square_10 sq'></div>
+			<div class = 'square_11 sq'></div>
+			<div class = 'square_12 sq'></div>
+			<div class = 'square_13 sq'></div>
+			<div class = 'square_14 sq'></div>
+			<div class = 'square_15 sq'></div>
+			<div class = 'square_16 sq'></div>
+			<div class = 'square_17 sq'></div>
+			<div class = 'square_18 sq'></div>
+			<div class = 'square_19 sq'></div>
+			<div class = 'square_20 sq'></div>
+			<div class = 'square_21 sq'></div>
+			<div class = 'square_22 sq'></div>
+			<div class = 'square_23 sq'></div>
+			<div class = 'square_24 sq'></div>
+			<div class = 'square_25 sq'></div>
+			<div class = 'square_26 sq'></div>
+			<div class = 'square_27 sq'></div>
+			<div class = 'square_28 sq'></div>
+			<div class = 'square_29 sq'></div>
+			<div class = 'square_30 sq'></div>
+			<div class = 'square_31 sq'></div>
+			<div class = 'square_32 sq'></div>
+			<div class = 'square_33 sq'></div>
+			<div class = 'square_34 sq'></div>
 		</section>
 
 		<div class = 'holdingPen'>
 			<img class = 'child playerPiece_3' src ='orange.svg'>
 			<img class = 'child playerPiece_4' src ='red.svg'>
 		</div>
-		<div class = problemCards></div>	
+		
+		<div class = problemCards>
+			<img id = 'problemCard' src = "problemCard.svg" width = '300pt', alt = 'Problem Cards'>
+		</div>	
+		<!-- <div class = blankCards>
+			<img id = 'blankCards' src = "blankCards.svg" width = '300pt', alt = 'Blank Cards'>
+		</div> -->
 	</div>
 	
 	<div>
@@ -62,16 +68,12 @@
 	</div>
 
 	<div>
-		<img id = 'die' class = 'oneDie' src = "oneDie.svg" height = '75pt', alt = '.'/>
-	</div>
-	<div>
-		<img id = 'die' class = 'twoDie' src = "twoDie.svg" height = '75pt', alt = ':'/>
-	</div>
-	<div>
-		<img id = 'die' class = 'problemDie' src = "problemDie.svg" height = '75pt', alt = '!'/>
+		<img class = 'die' id = 'problemDie' src = "problemDie.svg" height = '75pt', alt = '!'/>
 	</div>
 	
 	<h2 class = currentPlayer>PLAYER ONE'S TURN</h2>
+
+	<div class = pulledProblemCard></div>
 
 	<br>
 
@@ -84,6 +86,7 @@
 	<button class = 'p2Forward'>Move P2 Forward on Board</button>
 		
 	<br>
+	<button class = 'music'>Music!</button>
 	<button class = 'win'><a href="victory.html">View Victory Screen!</a></button>
 
 </body>
