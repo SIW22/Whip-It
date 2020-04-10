@@ -43,6 +43,14 @@ body {
 	top: 450px;
 }
 
+.playAgain {
+	font-size: 18pt;
+	padding: 4px 18px;
+	position: absolute;
+	left: 600px;
+	top: 450px;
+}
+
 .board:visited {
 	color: white;
 }
@@ -56,6 +64,14 @@ body {
 	left: 539;
 	top: 171;
 }
+
+h1 {
+	color: white;
+	font-family: Baloo, sans-serif;
+	font-size: 50pt;
+	padding: 100pt;
+}
+
 
 h2 {
 	font-family: Baloo, sans-serif;
@@ -111,8 +127,8 @@ h2 {
 
 #whipItLogo {
 	position: relative;
-	left: 350pt;
-	top: 140pt;
+	left: 335pt;
+	top: 135pt;
 	z-index: 50;
 	transition: all .2s ease-in-out;
 	/* box-shadow: 6pt 6pt 6pt rgba(0, 0, 0, 0.75); */
@@ -125,7 +141,7 @@ h2 {
 #problemDie {
 	position: relative;
 	left: 160pt;
-	top: 270pt;
+	top: 250pt;
 	z-index: 50;
 	transform: rotate(45deg);
 	border-radius: 10pt;
