@@ -1,20 +1,20 @@
 
 const problemCardDeck = [
-	{index: 0, message: `GO FORWARD!`, moveAmt: 1},
-	{index: 1, message: `MOVE AHEAD!`, moveAmt: 1},
-	{index: 2, message: `TRY TO DETECT IT!`, moveAmt: 1},
-	{index: 3, message: `WHEN A GOOD TIME TURNS AROUND, YOU MUST WHIP IT!`, moveAmt: -1},
-	{index: 4, message: `BEFORE THE CREAM SITS OUT TOO LONG, YOU MUST WHIP IT!`, moveAmt: -1},
-	{index: 5, message: `SHAPE IT UP!`, moveAmt: -1},
-	{index: 6, message: `WHEN A PROBLEM COMES ALONG, YOU MUST WHIP IT!`, moveAmt: 0},
-	{index: 7, message: `CRACK THAT WHIP! GIVE THE PAST THE SLIP!`, moveAmt: 0},
-	{index: 8, message: `YOU WILL NEVER LIVE IT DOWN, UNTIL YOU WHIP IT!`, moveAmt: 0},
-	{index: 9, message: `WHIP IT, INTO SHAPE!`, moveAmt: goAgain()},
-	{index: 10, message: `IT'S NOT TOO LATE, TO WHIP IT!`, moveAmt: goAgain()},
-	{index: 11, message: `WHIP IT GOOD!`, moveAmt: goAgain()},
-	{index: 12, message: `WHEN SOMETHING'S GOING WRONG, YOU MUST WHIP IT!`, moveAmt: loseTurn()},
-	{index: 13, message: `NO ONE GETS AWAY, UNTIL THE WHIP IT!`, moveAmt: loseTurn()},
-	{index: 14, message: `STEP ON A CRACK, BREAK YOUR MAMA'S BACK!`, moveAmt: loseTurn()},
+	{index: 0, message: `GO FORWARD!`, moveAmt: 1, action: `MOVE AHEAD ONE SPACE!`},
+	{index: 1, message: `MOVE AHEAD!`, moveAmt: 1, action: `MOVE AHEAD ONE SPACE!`},
+	{index: 2, message: `TRY TO DETECT IT!`, moveAmt: 1, action: `MOVE AHEAD ONE SPACE!`},
+	{index: 3, message: `WHEN A GOOD TIME TURNS AROUND, YOU MUST WHIP IT!`, moveAmt: -1, action: `MOVE BACK ONE SPACE!`},
+	{index: 4, message: `BEFORE THE CREAM SITS OUT TOO LONG, YOU MUST WHIP IT!`, moveAmt: -1, action: `MOVE BACK ONE SPACE!`},
+	{index: 5, message: `SHAPE IT UP!`, moveAmt: -1, action: `MOVE BACK ONE SPACE!`},
+	{index: 6, message: `WHEN A PROBLEM COMES ALONG, YOU MUST WHIP IT!`, moveAmt: 0, action: `END OF YOUR TURN!`},
+	{index: 7, message: `CRACK THAT WHIP! GIVE THE PAST THE SLIP!`, moveAmt: 0, action: `END OF YOUR TURN!`},
+	{index: 8, message: `YOU WILL NEVER LIVE IT DOWN, UNTIL YOU WHIP IT!`, moveAmt: 0, action: `END OF YOUR TURN!`},
+	{index: 9, message: `WHIP IT, INTO SHAPE!`, moveAmt: goAgain(), action: `GO AGAIN!`},
+	{index: 10, message: `IT'S NOT TOO LATE, TO WHIP IT!`, moveAmt: goAgain(), action: `GO AGAIN!`},
+	{index: 11, message: `WHIP IT GOOD!`, moveAmt: goAgain(), action: `GO AGAIN!`},
+	{index: 12, message: `WHEN SOMETHING'S GOING WRONG, YOU MUST WHIP IT!`, moveAmt: loseTurn(), action: `LOSE A TURN!`},
+	{index: 13, message: `NO ONE GETS AWAY, UNTIL THEY WHIP IT!`, moveAmt: loseTurn(), action: `LOSE A TURN!`},
+	{index: 14, message: `STEP ON A CRACK, BREAK YOUR MAMA'S BACK!`, moveAmt: loseTurn(), action: `LOSE A TURN!`},
 ];
 let arr = problemCardDeck;
 
@@ -107,6 +107,7 @@ let currentDie = document.querySelector('.die');
 
 currentDie.addEventListener('click', () => {
 	dieRoll(dieArray);
+	
 	if (document.querySelector('.currentPlayer') == `PLAYER ONE'S TURN`) {
 		document.querySelector('.currentPlayer').innerHTML = `PLAYER TWO'S TURN`;
 	console.log("It's Player Two's Turn.")
@@ -162,7 +163,31 @@ problem.addEventListener('click', () => {
 	let words = document.createElement('h3');
 	words.innerHTML = cardMessage;
 	document.querySelector('.newCard').appendChild(words);
+
+	let cardAction = randomCard.action;
+	console.log(cardAction);
+
+	let words2 = document.createElement('h4');
+	words2.innerHTML = cardAction;
+	document.querySelector('.newCard').appendChild(words2);
+
 	console.log('Problem Card Deck Accessed!')
+})
+
+/*  */
+const nextPlayer = document.querySelector('.currentPlayer');
+
+const state1 = "PLAYER ONE'S TURN";
+const state2 = "PLAYER TWO'S TURN";
+
+nextPlayer.addEventListener('click', () => {
+	if (nextPlayer === state1) {
+	nextPlayer.innerHTML = state2;
+	console.log("It's Player Two's Turn.")
+	} else if (nextPlayer === state2) {
+		nextPlayer.innerHTML = state1;
+		console.log("It's Player One's Turn");
+	}
 })
 
 
@@ -175,7 +200,9 @@ console.log(logo);
 
 logo.addEventListener('click', () => {
 	whipCrack.play();
-	pulledCard.parentNode.removeChild(pulledCard);
+
+	document.querySelector('.newCard').parentNode.removeChild('newCard');
+	// document.querySelector('.pulledProblemCard').parentNode.removeChild('.newCard');
 	console.log('Crack that Whip!');
 })
 

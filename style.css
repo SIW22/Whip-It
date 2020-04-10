@@ -128,7 +128,7 @@ h2 {
 	top: 270pt;
 	z-index: 50;
 	transform: rotate(45deg);
-	border-radius: 6pt;
+	border-radius: 10pt;
 	box-shadow: 12pt 4pt 4pt rgba(0, 0, 0, 0.65);
 }
 
@@ -168,7 +168,18 @@ h3 {
 	font-family: Baloo, sans-serif;
 	font-size: 24pt;
 	color: black;
-	position: absolute;
+	text-align: center;
+	line-height: 1;
+	
+}
+
+h4 {
+	font-family: Baloo, sans-serif;
+	font-size: 20pt;
+	color: darkred;
+	text-align: center;
+	padding: 0 0 20pt 0;
+	
 }
 
 .newCard {
