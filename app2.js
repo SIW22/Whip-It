@@ -20,9 +20,9 @@ const problemCardDeck = [
 let arr = problemCardDeck;
 
 const dieSides = [
-	{face: 'ONE', img: 'oneDie.svg', moveAmt: 1},
-	{face: 'TWO', img: 'twoDie.svg', moveAmt: 2},
-	{face: 'PROBLEM', img: 'problemDie.svg', moveAmt: 0, action: problemCardDraw},
+	{face: 'ONE', img: 'graphics/oneDie.svg', moveAmt: 1},
+	{face: 'TWO', img: 'graphics/twoDie.svg', moveAmt: 2},
+	{face: 'PROBLEM', img: 'graphics/problemDie.svg', moveAmt: 0, action: problemCardDraw},
 ];
 
 let dieArray = dieSides;
@@ -139,7 +139,7 @@ currentDie.addEventListener('click', () => {
 	dieRoll(dieArray);
 	if (document.querySelector('.currentPlayer') == `PLAYER ONE'S TURN`) {
 		document.querySelector('.currentPlayer').innerHTML = `PLAYER TWO'S TURN`;
-	console.log("It's PLayer Two's Turn.")
+	console.log("It's Player Two's Turn.")
 	} else {
 		document.querySelector('.currentPlayer').innerHTML = `PLAYER ONE'S TURN`;
 		console.log("It's Player One's Turn");
@@ -151,16 +151,16 @@ function dieRoll(dieArray) { //locates a random die side from array
 	dieResult = (Math.floor(Math.random()*3));
 	randomdeg = (Math.floor(Math.random()*360));
 	if (dieResult === 0) {
-		currentDie.setAttribute('src', 'oneDie.svg')
-		currentDie.setAttribute('transform', 'rotate(randomDeg)')
+		currentDie.setAttribute('src', 'graphics/oneDie.svg')
+		currentDie.setAttribute('transform', 'rotate(45deg)')
 		console.log('Rolled a 1!');
 	} else if (dieResult === 1) {
-		currentDie.setAttribute('src', 'twoDie.svg')
-		currentDie.setAttribute('transform', 'rotate(randomDeg)')
+		currentDie.setAttribute('src', 'graphics/twoDie.svg')
+		currentDie.setAttribute('transform', 'rotate(165deg)')
 		console.log('Rolled a 2!');
 	} else if (dieResult === 2) {
-		currentDie.setAttribute('src', 'problemDie.svg')
-		currentDie.setAttribute('transform', 'rotate(randomDeg)')
+		currentDie.setAttribute('src', 'graphics/problemDie.svg')
+		currentDie.setAttribute('transform', 'rotate(285deg)')
 		console.log('Uh oh!');
 	}
 }
@@ -181,8 +181,12 @@ function loseTurn() { //triggers goAgain on otherplayer
 }
 
 const problem = document.querySelector('#problemCard');
+
 problem.addEventListener('click', () => {
-	let pulledProblemCard = document.createElement(tagName[, options]);
+	let pulledProblemCard = document.createElement('pulledcard');
+	let newCard = document.querySelector(".pulledProblemCard");
+	newCard.appendChild(pulledProblemCard);
+
 	console.log('Problem Card Deck Accessed!')
 })
 
@@ -191,7 +195,7 @@ problem.addEventListener('click', () => {
 
 /* Sound Effect */
 
-const whipCrack = new Audio('whipcrack.wav');
+const whipCrack = new Audio('sounds/whipcrack.wav');
 
 let logo = document.querySelector('#whipItLogo');
 console.log(logo);
@@ -201,7 +205,7 @@ logo.addEventListener('click', () => {
 	console.log('Crack that Whip!');
 })
 
-const soundtrack = new Audio('whip_it.wav');
+const soundtrack = new Audio('sounds/whip_it.wav');
 
 let notes = document.querySelector('.music');
 
