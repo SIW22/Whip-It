@@ -1,4 +1,3 @@
-console.log('testing')
 
 const problemCardDeck = [
 	{index: 0, message: `GO FORWARD!`, moveAmt: 1},
@@ -104,6 +103,94 @@ function gameMode(num) {
 	}
 }
 
+let currentDie = document.querySelector('.die');
+
+currentDie.addEventListener('click', () => {
+	dieRoll(dieArray);
+	if (document.querySelector('.currentPlayer') == `PLAYER ONE'S TURN`) {
+		document.querySelector('.currentPlayer').innerHTML = `PLAYER TWO'S TURN`;
+	console.log("It's Player Two's Turn.")
+	} else {
+		document.querySelector('.currentPlayer').innerHTML = `PLAYER ONE'S TURN`;
+		console.log("It's Player One's Turn");
+	}
+	console.log('the die was clicked')
+})
+
+function dieRoll(dieArray) { //locates a random die side from array
+	dieResult = (Math.floor(Math.random()*3));
+	randomDeg = (Math.floor(Math.random()*360));
+	if (dieResult === 0) {
+		currentDie.setAttribute('src', 'graphics/oneDie.svg')
+		// currentDie.setAttribute('transform', `rotate(${randomDeg}deg)`)
+		console.log('Rolled a 1!');
+	} else if (dieResult === 1) {
+		currentDie.setAttribute('src', 'graphics/twoDie.svg')
+		// currentDie.setAttribute('transform', 'rotate(${randomDeg}deg)')
+		console.log('Rolled a 2!');
+	} else if (dieResult === 2) {
+		currentDie.setAttribute('src', 'graphics/problemDie.svg')
+		// currentDie.setAttribute('transform', 'rotate(${randomDeg}deg)')
+		console.log('Uh oh!');
+	}
+}
+
+function problemCardDraw(arr) { //locates a random card from a ProblemCardDeck
+	return arr[randomize(arr)];
+}
+function randomize(arr) { //supplies a random number based on length of given array
+	return Math.floor(Math.random()*15);
+}
+
+function goAgain() {} //skips next player's turn
+
+function loseTurn() {} //triggers goAgain on otherplayer
+
+
+const problem = document.querySelector('#problemCard');
+
+problem.addEventListener('click', () => {
+	let randomCard = problemCardDraw(arr);
+	let cardMessage = randomCard.message;
+	console.log(cardMessage);
+
+	let pulledCard = document.createElement('div');
+	pulledCard.setAttribute('class', 'newCard');
+	let newCard = document.querySelector('.pulledProblemCard');
+	newCard.appendChild(pulledCard);
+
+	let words = document.createElement('h3');
+	words.innerHTML = cardMessage;
+	document.querySelector('.newCard').appendChild(words);
+	console.log('Problem Card Deck Accessed!')
+})
+
+
+/* Sound Effect */
+
+const whipCrack = new Audio('sounds/whipcrack.wav');
+
+let logo = document.querySelector('#whipItLogo');
+console.log(logo);
+
+logo.addEventListener('click', () => {
+	whipCrack.play();
+	pulledCard.parentNode.removeChild(pulledCard);
+	console.log('Crack that Whip!');
+})
+
+const soundtrack = new Audio('sounds/whip_it.wav');
+
+let notes = document.querySelector('.music');
+
+notes.addEventListener('click', () => {
+	soundtrack.play();
+	console.log('I say Whip It!');
+})
+
+
+/* Game Automation */
+/* 
 function onePlayerGameProtocol() {
 	// adds color choice to object
 	playerOne.color = localStorage.getItem('color');
@@ -124,96 +211,7 @@ function twoPlayerGameProtocol() {
 	// winning player shown on victory page. "Player x Whipped it Good!"
 
 	// display whose turn it is during game? 
-}
-
-//childNodes -> array
-
-
-/* for (i = 0; i < )
- */
-
-let currentDie = document.querySelector('.die');
-/* let turnIndicator = document.querySelector('.currentPlayer') */
-
-currentDie.addEventListener('click', () => {
-	dieRoll(dieArray);
-	if (document.querySelector('.currentPlayer') == `PLAYER ONE'S TURN`) {
-		document.querySelector('.currentPlayer').innerHTML = `PLAYER TWO'S TURN`;
-	console.log("It's Player Two's Turn.")
-	} else {
-		document.querySelector('.currentPlayer').innerHTML = `PLAYER ONE'S TURN`;
-		console.log("It's Player One's Turn");
-	}
-	console.log('the die was clicked')
-})
-
-function dieRoll(dieArray) { //locates a random die side from array
-	dieResult = (Math.floor(Math.random()*3));
-	randomdeg = (Math.floor(Math.random()*360));
-	if (dieResult === 0) {
-		currentDie.setAttribute('src', 'graphics/oneDie.svg')
-		currentDie.setAttribute('transform', 'rotate(45deg)')
-		console.log('Rolled a 1!');
-	} else if (dieResult === 1) {
-		currentDie.setAttribute('src', 'graphics/twoDie.svg')
-		currentDie.setAttribute('transform', 'rotate(165deg)')
-		console.log('Rolled a 2!');
-	} else if (dieResult === 2) {
-		currentDie.setAttribute('src', 'graphics/problemDie.svg')
-		currentDie.setAttribute('transform', 'rotate(285deg)')
-		console.log('Uh oh!');
-	}
-}
-
-function problemCardDraw(arr) { //locates a random card from a ProblemCardDeck
-	return arr[randomize(arr)];
-}
-function randomize(arr) { //supplies a random number based on length of given array
-	return Math.floor(Math.random()*15);
-}
-
-function goAgain() { //skips next player's turn
-
-}
-
-function loseTurn() { //triggers goAgain on otherplayer
-
-}
-
-const problem = document.querySelector('#problemCard');
-
-problem.addEventListener('click', () => {
-	let pulledProblemCard = document.createElement('pulledcard');
-	let newCard = document.querySelector(".pulledProblemCard");
-	newCard.appendChild(pulledProblemCard);
-
-	console.log('Problem Card Deck Accessed!')
-})
-
-
-
-
-/* Sound Effect */
-
-const whipCrack = new Audio('sounds/whipcrack.wav');
-
-let logo = document.querySelector('#whipItLogo');
-console.log(logo);
-
-logo.addEventListener('click', () => {
-	whipCrack.play();
-	console.log('Crack that Whip!');
-})
-
-const soundtrack = new Audio('sounds/whip_it.wav');
-
-let notes = document.querySelector('.music');
-
-notes.addEventListener('click', () => {
-	soundtrack.play();
-	console.log('I say Whip It!');
-})
-
+} */
 
 
 	/* Game Play */

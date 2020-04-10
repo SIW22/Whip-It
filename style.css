@@ -114,8 +114,13 @@ h2 {
 	left: 350pt;
 	top: 140pt;
 	z-index: 50;
+	transition: all .2s ease-in-out;
 	/* box-shadow: 6pt 6pt 6pt rgba(0, 0, 0, 0.75); */
 }
+
+#whipItLogo:hover {
+	height: 220;
+  }
 
 #problemDie {
 	position: relative;
@@ -157,6 +162,25 @@ h2 {
 #problemCard {
 	box-shadow: 2pt 2pt 2pt rgba(0, 0, 0, 0.75);
 	transform: rotate(2deg);
+}
+
+h3 {
+	font-family: Baloo, sans-serif;
+	font-size: 24pt;
+	color: black;
+	position: absolute;
+}
+
+.newCard {
+	background: white;
+	position: absolute;
+	font-family: Baloo, sans-serif;
+	left: 740pt;
+	top: 340pt;
+	width: 275pt;
+	height: 153pt;
+	box-shadow: 8pt 8pt 8pt rgba(0, 0, 0, 0.5);
+	transform: rotate(-4deg);
 }
 
  

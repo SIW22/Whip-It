@@ -89,7 +89,7 @@ if (localStorage.getItem('numberOfPlayers', '1')
 
 /* Sound Effect */
 
-const whipCrack = new Audio('sounds/whipcrack.wav');
+/* const whipCrack = new Audio('sounds/whipcrack.wav');
 
 let navSounds = document.querySelector('.nav');
 console.log('Whip It!');
@@ -97,7 +97,7 @@ console.log('Whip It!');
 navSounds.addEventListener('click', () => {
 	whipCrack.play();
 	console.log('Crack that Whip!');
-})
+}) */
 
 
 
