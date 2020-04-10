@@ -211,17 +211,21 @@ logo.addEventListener('click', () => {
 })
 
 const soundtrack = new Audio('sounds/whip_it.wav');
-
 let notes = document.querySelector('.music');
 
-notes.addEventListener('click', () => {
+function playMusic() {
 	soundtrack.play();
-	setTimeout(() => {
-		soundtrack.pause();
-	}, 5000);
-	console.log('I say Whip It!');
-})
+	notes.removeEventListener('click', playMusic);
+	notes.addEventListener('click', stopMusic);
+}
 
+function stopMusic() {
+	soundtrack.pause();
+	notes.removeEventListener('click', stopMusic);
+	notes.addEventListener('click', playMusic);
+}
+
+notes.addEventListener('click', playMusic);
 
 /* Game Automation */
 /* 
