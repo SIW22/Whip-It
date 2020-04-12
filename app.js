@@ -7,74 +7,109 @@ console.log('testing')
 const colorOptions = ['black','yellow','orange','red'];
 
 const onePlayerButton = document.querySelector('#onePlayer');
+
 onePlayerButton.addEventListener('click', () => {
 	localStorage.setItem('numberOfPlayers', '1'); // store number of players
-	document.querySelector('.colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR";
+	onePlayerButton.style.backgroundColor = 'darkred';
+	if (twoPlayerButton.style.backgroundColor == "darkred") {
+		twoPlayerButton.style.backgroundColor = '#C1272D';
+	}
+	document.querySelector('.colors').style.opacity = '1';
 	console.log('One player clicked');
-	// Player One Selects Color
+	onePlayerColorSelect();	
+})
+
+
+function onePlayerColorSelect() {
+	document.querySelector('.colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR";
+	
 	document.querySelector('#black').addEventListener('click', () => {
-		console.log('black was clicked');
 		localStorage.setItem('color', colorOptions[0]);
+		document.querySelector('#black').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PRESS START GAME!";
 	}) 
 	document.querySelector('#yellow').addEventListener('click', () => {
-		console.log('yellow was clicked');
 		localStorage.setItem('color', colorOptions[1]);
+		document.querySelector('#yellow').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PRESS START GAME!";
 	})
 	document.querySelector('#orange').addEventListener('click', () => {
-		console.log('orange was clicked');
 		localStorage.setItem('color', colorOptions[2]);
+		document.querySelector('#orange').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PRESS START GAME!";
 	}) 
 	document.querySelector('#red').addEventListener('click', () => {
-		console.log('red was clicked');
 		localStorage.setItem('color', colorOptions[3]);
+		document.querySelector('#red').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PRESS START GAME!";
 	})
-
-})
+	// link to board here?
+}
 
 const twoPlayerButton = document.querySelector('#twoPlayer');
+
 twoPlayerButton.addEventListener('click', () => {
 	localStorage.setItem('numberOfPlayers', '2'); // store number of players
-	document.querySelector('.colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR"; // update text
+	twoPlayerButton.style.backgroundColor = 'darkred';
+	if (onePlayerButton.style.backgroundColor == "darkred") {
+		onePlayerButton.style.backgroundColor = '#C1272D';
+	}
+	document.querySelector('.colors').style.opacity = '1';
 	console.log('Two player clicked');
-	// Player One Selects Color
-	document.querySelector('#black').addEventListener('click', () => {
-		console.log('black was clicked');
-		localStorage.setItem('color1', colorOptions[0]);
-	}) 
-	document.querySelector('#yellow').addEventListener('click', () => {
-		console.log('yellow was clicked');
-		localStorage.setItem('color1', colorOptions[1]);
-	})
-	document.querySelector('#orange').addEventListener('click', () => {
-		console.log('orange was clicked');
-		localStorage.setItem('color1', colorOptions[2]);
-	}) 
-	document.querySelector('#red').addEventListener('click', () => {
-		console.log('red was clicked');
-		localStorage.setItem('color1', colorOptions[3]);
-	})
-	// Pause and wait for input? 
-	// Player Two Selects Color
-	document.querySelector('.colorPrompt').innerHTML = "PLAYER TWO, CHOOSE A COLOR"; // update text
-	console.log('Two player clicked');
-
-	document.querySelector('#black').addEventListener('click', () => {
-		console.log('black was clicked');
-		localStorage.setItem('color2', colorOptions[0]);
-	}) 
-	document.querySelector('#yellow').addEventListener('click', () => {
-		console.log('yellow was clicked');
-		localStorage.setItem('color2', colorOptions[1]);
-	})
-	document.querySelector('#orange').addEventListener('click', () => {
-		console.log('orange was clicked');
-		localStorage.setItem('color2', colorOptions[2]);
-	}) 
-	document.querySelector('#red').addEventListener('click', () => {
-		console.log('red was clicked');
-		localStorage.setItem('color2', colorOptions[3]);
-	})
+	twoPlayerColorSelectA();	
 })
+
+function twoPlayerColorSelectA() {
+	document.querySelector('.colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR";
+	document.querySelector('#black').addEventListener('click', () => {
+		localStorage.setItem('color1', colorOptions[0]);
+		document.querySelector('#black').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PLAYER TWO, CHOOSE A COLOR";
+		twoPlayerColorSelectB();
+	}) 
+	document.querySelector('#yellow').addEventListener('click', () => {
+		localStorage.setItem('color1', colorOptions[1]);
+		document.querySelector('#yellow').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PLAYER TWO, CHOOSE A COLOR";
+		twoPlayerColorSelectB();
+	})
+	document.querySelector('#orange').addEventListener('click', () => {
+		localStorage.setItem('color1', colorOptions[2]);
+		document.querySelector('#orange').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PLAYER TWO, CHOOSE A COLOR";
+		twoPlayerColorSelectB();
+	}) 
+	document.querySelector('#red').addEventListener('click', () => {
+		localStorage.setItem('color1', colorOptions[3]);
+		document.querySelector('#red').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PLAYER TWO, CHOOSE A COLOR";
+		twoPlayerColorSelectB();
+	})
+}
+
+function twoPlayerColorSelectB() {
+
+	document.querySelector('#black').addEventListener('click', () => { 
+		localStorage.setItem('color2', colorOptions[0]);
+		document.querySelector('#black').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PRESS START GAME!";
+	}) 
+	document.querySelector('#yellow').addEventListener('click', () => {
+		localStorage.setItem('color2', colorOptions[1]);
+		document.querySelector('#yellow').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PRESS START GAME!";
+	})
+	document.querySelector('#orange').addEventListener('click', () => {
+		localStorage.setItem('color2', colorOptions[2]);
+		document.querySelector('#orange').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PRESS START GAME!";
+	}) 
+	document.querySelector('#red').addEventListener('click', () => {
+		localStorage.setItem('color2', colorOptions[3]);
+		document.querySelector('#red').style.opacity = '0.5';
+		document.querySelector('.colorPrompt').innerHTML = "PRESS START GAME!";
+	})
+}
 
 if (localStorage.getItem('numberOfPlayers', '1') 
 	&& (localStorage.getItem('color', 'black')) 

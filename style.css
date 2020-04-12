@@ -33,6 +33,7 @@ body {
 	position: relative;
 	align-items: center;
 	margin: 50pt 50pt 0pt 50pt;
+	outline: 0;
 }
 
 .board {
@@ -40,14 +41,6 @@ body {
 	padding: 4px 18px;
 	position: absolute;
 	left: 530px;
-	top: 450px;
-}
-
-.playAgain {
-	font-size: 18pt;
-	padding: 4px 18px;
-	position: absolute;
-	left: 600px;
 	top: 450px;
 }
 
@@ -97,6 +90,7 @@ h2 {
 	position: absolute;
 	z-index: 70;
 	padding: 10px 70px;
+	opacity: 1.0;
 }
 
 #black {
@@ -417,13 +411,40 @@ h4 {
 
 /* Victory.html */
 
-h1 {
+.victoryScreen {
+	z-index: 0;
+	background: white;
+	position: absolute;
+	justify-content: center;
+	left: 245pt;
+	top: 103pt;
+	width: 550pt;
+	height: 432pt;
+	border-radius: 16pt;
+	box-shadow: 8pt 8pt 8pt rgba(0, 0, 0, 0.75);
+	display: flex;
+}
+
+.whoohoo {
+	padding: 70pt 100pt;
 	text-align: center;
 	font-family: Baloo, sans-serif;
 	font-size: 36pt;
+	color: black;
 }
 
-.again {
-	position: relative;
-	top: 400pt;
+.playAgain {
+	font-family: Baloo, sans-serif;
+	font-size: 24pt;
+	color: white;
+	background-color: #C1272D;
+	border-radius: 10pt;
+	padding: 6px 22px;
+	box-shadow: 4pt 4pt 4pt rgba(0, 0, 0, 0.75);
+	position: absolute;
+	/* text-align: center; */
+	/* margin: 50pt 50pt 0pt 50pt; */
+	outline: 0;
+	justify-content: center;
+	top: 300pt;
 }

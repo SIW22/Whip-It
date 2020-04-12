@@ -59,22 +59,12 @@ function movePlayer(player, distance) {
 
 	for (i = 0; i < sqArray.length; i++) {
 		if (sqArray[i].children.length < 2) {
-			console.log(sqArray[i].children);
 			document.querySelector('.playerPiece_1').classList.add('cohab');
 			document.querySelector('.playerPiece_2').classList.add('cohab');
-			// console.log(sqArray[i]);
 		}
 	}
 }
-/*	
-	for (i = 0; i < list.length; i++) {
-		if (list[i].childNode.length === 2) {
-			list[i].setAttribute('display', 'flex-grow');
-			console.log(list[i]);
-			// list[i].style.display = 'flex';
-		}
-	}
-} */
+
 
 /* Movement Buttons */
 let p1B = document.querySelector('.p1Backward');
@@ -96,7 +86,6 @@ p2F.addEventListener('click', () => movePlayer(player2, 1));
 
 let num = localStorage.getItem('numberOfPlayers');
 
-
 function gameMode(num) {
 	if (playerSelect(num) === 1) {
 		onePlayerGameProtocol();
@@ -107,20 +96,20 @@ function gameMode(num) {
 	}
 }
 
-let currentDie = document.querySelector('.die');
+// let currentDie = document.querySelector('.die');
 
-currentDie.addEventListener('click', () => {
-	dieRoll(dieArray);
+// currentDie.addEventListener('click', () => {
+// 	dieRoll(dieArray);
 	
-	if (document.querySelector('.currentPlayer') == `PLAYER ONE'S TURN`) {
-		document.querySelector('.currentPlayer').innerHTML = `PLAYER TWO'S TURN`;
-	console.log("It's Player Two's Turn.")
-	} else {
-		document.querySelector('.currentPlayer').innerHTML = `PLAYER ONE'S TURN`;
-		console.log("It's Player One's Turn");
-	}
-	console.log('the die was clicked')
-})
+// 	if (document.querySelector('.currentPlayer') == `PLAYER ONE'S TURN`) {
+// 		document.querySelector('.currentPlayer').innerHTML = `PLAYER TWO'S TURN`;
+// 	console.log("It's Player Two's Turn.")
+// 	} else {
+// 		document.querySelector('.currentPlayer').innerHTML = `PLAYER ONE'S TURN`;
+// 		console.log("It's Player One's Turn");
+// 	}
+// 	console.log('the die was clicked')
+// })
 
 function dieRoll(dieArray) { //locates a random die side from array
 	dieResult = (Math.floor(Math.random()*3));

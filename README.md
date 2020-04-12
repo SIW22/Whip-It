@@ -1,8 +1,8 @@
-# Whip It!
+# Project #Zero: The Game
 
 ### Overview
 
-A DEVO inspired board game for one or two players using random progression and event cards that require resolution to continue. First player to reach the end space wins. Whip it!
+A board game for one or two players using random progression and event cards that require resolution to continue. First player to reach the end space wins. 
 
 ---
 
@@ -40,8 +40,8 @@ Coordinate based player piece tracking. If one piece appear on a square, it will
 
 ### Wireframe Sketches
 
-![splash page](assets/Welcome_Page.png)
+![splash page](Assets/Welcome_Page.png)
 
-![board](assets/Game_Board.png)
+![board](Assets/Game_Board.png)
 
-![victory](assets/Win_Page.png)
+![victory](Assets/Win_Page.png)
