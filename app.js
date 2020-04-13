@@ -9,12 +9,17 @@ const colorOptions = ['black','yellow','orange','red'];
 const onePlayerButton = document.querySelector('#onePlayer');
 
 onePlayerButton.addEventListener('click', () => {
+	localStorage.clear();
+	document.querySelector('.colorPrompt').innerHTML = "PLAYER ONE, CHOOSE A COLOR";
 	localStorage.setItem('numberOfPlayers', '1'); // store number of players
 	onePlayerButton.style.backgroundColor = 'darkred';
 	if (twoPlayerButton.style.backgroundColor == "darkred") {
 		twoPlayerButton.style.backgroundColor = '#C1272D';
 	}
-	document.querySelector('.colors').style.opacity = '1';
+	document.querySelector('#black').style.opacity = '1';
+	document.querySelector('#yellow').style.opacity = '1';
+	document.querySelector('#orange').style.opacity = '1';
+	document.querySelector('#red').style.opacity = '1';
 	console.log('One player clicked');
 	onePlayerColorSelect();	
 })
@@ -43,18 +48,21 @@ function onePlayerColorSelect() {
 		document.querySelector('#red').style.opacity = '0.5';
 		document.querySelector('.colorPrompt').innerHTML = "PRESS START GAME!";
 	})
-	// link to board here?
 }
 
 const twoPlayerButton = document.querySelector('#twoPlayer');
 
 twoPlayerButton.addEventListener('click', () => {
+	localStorage.clear();
 	localStorage.setItem('numberOfPlayers', '2'); // store number of players
 	twoPlayerButton.style.backgroundColor = 'darkred';
 	if (onePlayerButton.style.backgroundColor == "darkred") {
 		onePlayerButton.style.backgroundColor = '#C1272D';
 	}
-	document.querySelector('.colors').style.opacity = '1';
+	document.querySelector('#black').style.opacity = '1';
+	document.querySelector('#yellow').style.opacity = '1';
+	document.querySelector('#orange').style.opacity = '1';
+	document.querySelector('#red').style.opacity = '1';
 	console.log('Two player clicked');
 	twoPlayerColorSelectA();	
 })
@@ -116,6 +124,7 @@ if (localStorage.getItem('numberOfPlayers', '1')
 	|| (localStorage.getItem('color', 'yellow')) 
 	|| (localStorage.getItem('color', 'orange')) 
 	|| (localStorage.getItem('color', 'red'))) {
+		
 	console.log('onto the game')
 	//str.link('board.html');
 }

@@ -90,31 +90,34 @@ h2 {
 	position: absolute;
 	z-index: 70;
 	padding: 10px 70px;
-	opacity: 1.0;
 }
 
 #black {
 	left: 308;
 	top: 322;
 	padding: 0px 15px;
+	opacity: 1.0;
 }
 
 #yellow {
 	left: 422;
 	top: 322;
 	padding: 0px 15px;
+	opacity: 1.0;
 }
 
 #orange {
 	left: 536;
 	top: 322;
 	padding: 0px 15px;
+	opacity: 1.0;
 }
 
 #red {
 	left: 650;
 	top: 322;
 	padding: 0px 15px;
+	opacity: 1.0;
 }
 
 /* Board.html */
@@ -125,12 +128,29 @@ h2 {
 	top: 135pt;
 	z-index: 50;
 	transition: all .2s ease-in-out;
-	/* box-shadow: 6pt 6pt 6pt rgba(0, 0, 0, 0.75); */
+	filter: drop-shadow( 5px 5px 5px black );
+}
+
+@keyframes pulse {
+	0% {
+	 transform: scale(1, 1);
+	 filter: drop-shadow( 5px 5px 5px black );
+	}
+
+	50% {
+	 transform: scale(1.05, 1.05);
+	 filter: drop-shadow( 7px 7px 7px black );
+	}
+
+	100% {
+	transform: scale(1, 1);
+	filter: drop-shadow( 5px 5px 5px black );
+	}
 }
 
 #whipItLogo:hover {
-	height: 220;
-  }
+	animation: pulse 1s linear infinite;
+}
 
 #problemDie {
 	position: relative;
@@ -154,10 +174,6 @@ h2 {
 	/* position: absolute; */
 	z-index: 50;
 }
-/* 
-.cohab {
-	position: absolute;
-} */
 
 .holdingPen {
 	display: none;
@@ -174,9 +190,14 @@ h2 {
 }
 
 #problemCard {
-	box-shadow: 2pt 2pt 2pt rgba(0, 0, 0, 0.75);
+	transition: all .2s ease-in-out;
+	filter: drop-shadow( 5px 5px 5px black );
 	transform: rotate(2deg);
 }
+
+/* #problemCArd.hover {
+	animation: pulse 1s linear infinite;
+} */
 
 h3 {
 	font-family: Baloo, sans-serif;

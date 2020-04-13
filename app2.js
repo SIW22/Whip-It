@@ -48,7 +48,6 @@ function movePlayer(player, distance) {
 	player.currentNumber = newSquare;
 	player.currentSquareClass = ('.square_' + newSquare);
 	let location = document.querySelector(player.currentSquareClass);
-	// console.log(player.currentSquareClass);
 	let playerPiece = document.querySelector(player.playerClass);
 	location.append(playerPiece);
 	
@@ -95,21 +94,6 @@ function gameMode(num) {
 		console.log('Two Player Game Selected')
 	}
 }
-
-// let currentDie = document.querySelector('.die');
-
-// currentDie.addEventListener('click', () => {
-// 	dieRoll(dieArray);
-	
-// 	if (document.querySelector('.currentPlayer') == `PLAYER ONE'S TURN`) {
-// 		document.querySelector('.currentPlayer').innerHTML = `PLAYER TWO'S TURN`;
-// 	console.log("It's Player Two's Turn.")
-// 	} else {
-// 		document.querySelector('.currentPlayer').innerHTML = `PLAYER ONE'S TURN`;
-// 		console.log("It's Player One's Turn");
-// 	}
-// 	console.log('the die was clicked')
-// })
 
 function dieRoll(dieArray) { //locates a random die side from array
 	dieResult = (Math.floor(Math.random()*3));
@@ -167,7 +151,7 @@ problem.addEventListener('click', () => {
 	console.log('Problem Card Deck Accessed!')
 })
 
-/*  */
+/* add connection to die rolls, card draws, and whip cracks */
 const nextPlayer = document.querySelector('.currentPlayer');
 
 const state1 = "PLAYER ONE'S TURN";
