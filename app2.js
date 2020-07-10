@@ -16,6 +16,7 @@ const problemCardDeck = [
 	{index: 13, message: `NO ONE GETS AWAY, UNTIL THEY WHIP IT!`, moveAmt: loseTurn(), action: `LOSE A TURN!`},
 	{index: 14, message: `STEP ON A CRACK, BREAK YOUR MAMA'S BACK!`, moveAmt: loseTurn(), action: `LOSE A TURN!`},
 ];
+
 let arr = problemCardDeck;
 
 const dieSides = [
@@ -42,7 +43,6 @@ const player2 = {
 	currentSquareClass: '.square_0'
 }
 
-
 function movePlayer(player, distance) {
 	let newSquare = player.currentNumber + distance;
 	player.currentNumber = newSquare;
@@ -55,14 +55,20 @@ function movePlayer(player, distance) {
 
 
 	const sqArray = [...list];
-
+// Figure out how to link this to color choices
 	for (i = 0; i < sqArray.length; i++) {
 		if (sqArray[i].children.length < 2) {
 			document.querySelector('.playerPiece_1').classList.add('cohab');
 			document.querySelector('.playerPiece_2').classList.add('cohab');
-		}
+		} 
 	}
 }
+
+let sides = document.querySelector('.current-player-sides');
+sides.addEventListener( 'click', function() {
+  // sides.classList.toggle('tease-it');
+  sides.classList.toggle('flip-it');
+});
 
 
 /* Movement Buttons */
@@ -72,30 +78,83 @@ let p2B = document.querySelector('.p2Backward');
 let p2F = document.querySelector('.p2Forward');
 
 p1B.addEventListener('click', () => movePlayer(player1, -1));
-p1F.addEventListener('click', () => movePlayer(player1, 1));
+p1F.addEventListener('click', () => movePlayer(player1,  1));
 p2B.addEventListener('click', () => movePlayer(player2, -1));
-p2F.addEventListener('click', () => movePlayer(player2, 1));
+p2F.addEventListener('click', () => movePlayer(player2,  1));
 
 /* Game Engine */
 
-// how to link information collected from splash page to here?
-// input number of players, 1 or 2;
-// input player one color choice
-// input player two color choice
-
-let num = localStorage.getItem('numberOfPlayers');
+const num = localStorage.getItem('numberOfPlayers');
+const col = localStorage.getItem('color');
+const col1 = localStorage.getItem('color1');
+const col2 = localStorage.getItem('color2');
 
 function gameMode(num) {
 	if (playerSelect(num) === 1) {
-		onePlayerGameProtocol();
+		onePlayerGameProtocol(col);
 		console.log('One Player Game Selected.')
 	} else if (playerSelect(num) === 2) {
-		twoPlayerGameProtocol();
+		twoPlayerGameProtocol(col1, col2);
 		console.log('Two Player Game Selected')
 	}
 }
 
-function dieRoll(dieArray) { //locates a random die side from array
+// gameMode();
+
+/* Game Automation */
+// function onePlayerGameProtocol(col) {
+// 	// adds color choice to object
+// 	if (col === 'black') {
+// 		player1.playerClass = '.playerPiece1';
+// 	} else if (col === 'yellow') {
+// 		player1.playerClass = '.playerPiece2';
+// 	} else if (col === 'orange') {
+// 		player1.playerClass = '.playerPiece3';
+// 	} else {
+// 		player1.playerClass = '.playerPiece4';
+// 	console.log(col);
+
+	// player1.color = localStorage.getItem('color');
+	
+	// let startLocation = document.querySelector('.square_0');
+	// player.currentSquareClass = startLocation;
+
+	// startLocation.append(player1.playerClass);
+
+	// player clicks die to roll
+	// player piece moves or a card is drawn
+	// player must click to resolve card
+	// repeats until square 34 is reached
+	// 'lose a turn' cards are skipped in array (items 12-14)
+	// player one victory page "You Whipped it Good!"
+// }
+
+function twoPlayerGameProtocol(col1, col2) {
+	playerOne.color = localStorage.getItem('color1');
+	playerTwo.color = localStorage.getItem('color2');
+	// player one takes a turn
+	// player two takes a turn
+	// repeats until square 34 is reached by either player.
+	// winning player shown on victory page. "Player x Whipped it Good!"
+
+	// display whose turn it is during game? 
+}
+
+let currentDie = document.querySelector('.die');	
+
+currentDie.addEventListener('click', () => {	
+	dieRoll(dieArray);	
+
+	if (document.querySelector('.currentPlayer') == `PLAYER ONE'S TURN`) {	
+		document.querySelector('.currentPlayer').innerHTML = `PLAYER TWO'S TURN`;	
+	console.log("It's Player Two's Turn.")	
+	} else {	
+		document.querySelector('.currentPlayer').innerHTML = `PLAYER ONE'S TURN`;	
+		console.log("It's Player One's Turn");	
+	}	
+})
+
+function dieRoll(dieArray) {
 	dieResult = (Math.floor(Math.random()*3));
 	randomDeg = (Math.floor(Math.random()*360));
 	if (dieResult === 0) {
@@ -113,10 +172,14 @@ function dieRoll(dieArray) { //locates a random die side from array
 	}
 }
 
-function problemCardDraw(arr) { //locates a random card from a ProblemCardDeck
+
+//locates a random card from a ProblemCardDeck
+function problemCardDraw(arr) {
 	return arr[randomize(arr)];
 }
-function randomize(arr) { //supplies a random number based on length of given array
+
+//supplies a random number based on length of given array
+function randomize(arr) { 
 	return Math.floor(Math.random()*15);
 }
 
@@ -152,7 +215,7 @@ problem.addEventListener('click', () => {
 })
 
 /* add connection to die rolls, card draws, and whip cracks */
-const nextPlayer = document.querySelector('.currentPlayer');
+const nextPlayer = document.querySelector('.current-player');
 
 const state1 = "PLAYER ONE'S TURN";
 const state2 = "PLAYER TWO'S TURN";
@@ -199,30 +262,6 @@ function stopMusic() {
 }
 
 notes.addEventListener('click', playMusic);
-
-/* Game Automation */
-/* 
-function onePlayerGameProtocol() {
-	// adds color choice to object
-	playerOne.color = localStorage.getItem('color');
-	// player clicks die to roll
-	// player piece moves or a card is drawn
-	// player must click to resolve card
-	// repeats until square 34 is reached
-	// 'lose a turn' cards are skipped in array (items 12-14)
-	// player one victory page "You Whipped it Good!"
-}
-
-function twoPlayerGameProtocol() {
-	playerOne.color = localStorage.getItem('color1');
-	playerTwo.color = localStorage.getItem('color2');
-	// player one takes a turn
-	// player two takes a turn
-	// repeats until square 34 is reached by either player.
-	// winning player shown on victory page. "Player x Whipped it Good!"
-
-	// display whose turn it is during game? 
-} */
 
 
 	/* Game Play */

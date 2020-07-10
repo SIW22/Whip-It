@@ -1,28 +1,31 @@
 * {
-	margin: o auto;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-	background-color: #727272;
-	box-sizing: border-box;
+	background-color: #929292;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
 }
 
-/* Index.html */
+/* Index.html LANDING SCREEN */
 
 .landingScreen {
 	z-index: 0;
 	background: white;
-	position: absolute;
+	position: relative;
 	justify-content: center;
-	left: 245pt;
-	top: 103pt;
 	width: 550pt;
 	height: 432pt;
 	border-radius: 16pt;
 	box-shadow: 8pt 8pt 8pt rgba(0, 0, 0, 0.75);
 }
 
-#onePlayer, #twoPlayer, .board {
+#onePlayer, #twoPlayer, .start-game-btn {
 	font-family: Baloo, sans-serif;
 	font-size: 24pt;
 	color: white;
@@ -31,21 +34,23 @@ body {
 	padding: 6px 22px;
 	box-shadow: 4pt 4pt 4pt rgba(0, 0, 0, 0.75);
 	position: relative;
-	align-items: center;
-	margin: 50pt 50pt 0pt 50pt;
+	margin: 40pt 50pt 0pt 50pt;
 	outline: 0;
 }
 
-.board {
+.start-game-btn {
 	font-size: 18pt;
 	padding: 4px 18px;
 	position: absolute;
-	left: 530px;
-	top: 450px;
+	align-self: center;
+	text-decoration: none;
+	left: 210px;
+	top: 410px;
 }
 
-.board:visited {
+.start-game-btn:visited {
 	color: white;
+	text-decoration: none;
 }
 
 #onePlayer {
@@ -65,25 +70,11 @@ h1 {
 	padding: 100pt;
 }
 
-
 h2 {
 	font-family: Baloo, sans-serif;
 	color: black;
 	text-align: center;
 	padding: 0px;
-}
-
-.currentPlayer {
-	font-family: Baloo, sans-serif;
-	color: white;
-	font-size: 20pt;
-	position: absolute;
-	left: 675pt;
-	top: 135pt;
-	background-color: #C1272D;
-	box-shadow: 2pt 2pt 2pt rgba(0, 0, 0, 0.75);
-	border-radius: 10pt;
-	padding: 6px 22px;
 }
 
 .colors {
@@ -96,34 +87,133 @@ h2 {
 	left: 308;
 	top: 322;
 	padding: 0px 15px;
-	opacity: 1.0;
 }
 
 #yellow {
 	left: 422;
 	top: 322;
 	padding: 0px 15px;
-	opacity: 1.0;
 }
 
 #orange {
 	left: 536;
 	top: 322;
 	padding: 0px 15px;
-	opacity: 1.0;
 }
 
 #red {
 	left: 650;
 	top: 322;
 	padding: 0px 15px;
-	opacity: 1.0;
+	
+}
+
+/* Landing Screen Game Pieces */
+
+#black:hover {
+	animation: shimmy 1s linear infinite;
+}
+#yellow:hover {
+	animation: shimmy 1s linear infinite;
+}
+#orange:hover {
+	animation: shimmy 1s linear infinite;
+}
+#red:hover {
+	animation: shimmy 1s linear infinite;
+}
+
+
+/* ANIMATIONS! */
+
+@keyframes pulse {
+	0% {
+		transform: scale(1, 1);
+		filter: drop-shadow( 5px 5px 5px black );
+	}
+
+	50% {
+		transform: scale(1.05, 1.05);
+		filter: drop-shadow( 7px 7px 7px black );
+	}
+
+	100% {
+		transform: scale(1, 1);
+		filter: drop-shadow( 5px 5px 5px black );
+	}
+}
+
+@keyframes wiggle {
+	0%   {transform: rotate(4deg);}
+	50%  {transform: rotate(-4deg);}
+	100% {transform: rotate(4deg);}
+}
+
+@keyframes shimmy {
+	0%   {transform: rotate(2deg);}
+	49%  {transform: rotate(2deg);}
+	50%  {transform: rotate(-2deg);}
+	100% {transform: rotate(-2deg);}
+}
+
+@keyframes soultrain {
+	0%   {box-shadow: 0pt 0pt 8pt rgba(180, 0, 0, 0.75);}
+	33%  {box-shadow: 0pt 0pt 8pt rgba(248, 244, 3, 0.75);}
+	66%  {box-shadow: 0pt 0pt 8pt rgba(180, 0, 0, 0.75);}
+	100% {box-shadow: 0pt 0pt 8pt rgba(180, 0, 0, 0.75);}
+}
+
+@keyframes dieroll {
+	0%   {transform: translateX(20px)}
+	50%  {transform: rotate(360deg)}
+	100% {transform: translateX(0px)}
 }
 
 /* Board.html */
 
-#whipItLogo {
+.board-container {
+	height: 860px;
+	width: 1400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	position: relative;
+}
+
+.gameBoard {
+	height: 860px;
+	width: 1400px;
+	background-color: #525252;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: scroll;
+	box-shadow: 4pt 4pt 4pt rgba(0, 0, 0, 0.75);
+}
+
+.board-sticker {
+	align-self: center;
+	position: absolute;
+	height: 840px;
+	width: 1380px;
+	border: .5px solid black;
+	background-color: #323232;
+}
+
+.board-fold {
+	position: absolute;
+	align-self: center;
+	height: 100%;
+	width: 10px;
+	margin-left: -7px;
+	background: linear-gradient(
+		90deg, rgba(0, 0, 0, .25) 
+		0%, rgba(255, 255, 255, .125) 100%);
+}
+
+#whipItLogo {
+	position: absolute;
 	left: 335pt;
 	top: 135pt;
 	z-index: 50;
@@ -131,52 +221,125 @@ h2 {
 	filter: drop-shadow( 5px 5px 5px black );
 }
 
-@keyframes pulse {
-	0% {
-	 transform: scale(1, 1);
-	 filter: drop-shadow( 5px 5px 5px black );
-	}
-
-	50% {
-	 transform: scale(1.05, 1.05);
-	 filter: drop-shadow( 7px 7px 7px black );
-	}
-
-	100% {
-	transform: scale(1, 1);
-	filter: drop-shadow( 5px 5px 5px black );
-	}
-}
-
 #whipItLogo:hover {
 	animation: pulse 1s linear infinite;
 }
 
-#problemDie {
+/* CURRENT PLAYER BULLET DISPLAY */
+
+.current-player-bullet {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	left: 865px;
+	top: 200px;
+	height: 60px;
+	width: 325px;
+	perspective: 1000px;
+}
+
+.current-player-sides {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 	position: relative;
+	transform-style: preserve-3d; 
+	cursor: pointer;
+	transition: transform .5s;
+}
+
+.current-player {
+	font-family: Baloo, sans-serif;
+	color: white;
+	text-align: center;
+	font-size: 15pt;
+	position: relative;
+	background-color: #C1272D;
+	box-shadow: 2pt 2pt 2pt rgba(0, 0, 0, 0.75);
+	border-radius: 10pt;
+}
+
+.current-player h2 {
+	color: white;
+	margin-top: 6px;
+}
+
+.flip-it {
+  transform: rotateX(180deg);
+}
+
+.p1, .p2 {
+  text-align: center;
+  color: white;
+  height: 100%;
+  width: 100%;
+  box-shadow: 2px 2px 4px black;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.p1 {
+  background-color: #C1272D;
+  z-index: 2;
+}
+
+.p2 {
+  background-color: #C1272D;
+	z-index: 1;
+	box-shadow: 2px 2px 4px black;
+  transform: rotateX(180deg);
+}
+
+/* DIE */
+
+#problemDie {
+	position: absolute;
 	left: 160pt;
-	top: 250pt;
+	top: 425pt;
 	z-index: 50;
 	transform: rotate(45deg);
 	border-radius: 10pt;
-	box-shadow: 12pt 4pt 4pt rgba(0, 0, 0, 0.65);
+	box-shadow: 0pt 0pt 16pt rgba(0, 0, 0, 0.65);
 }
+
+#problemDie:hover {
+	cursor: pointer;
+	animation: dieroll 1s linear ease-out;
+}
+
+/* BUTTONS */
 
 .board, .win, .music, .p1Backward, .p1Forward, .p2Backward, .p2Forward {
 	position: relative;
 	top: 400pt;
 }
 
+.button-group {
+	position: absolute;
+	z-index: 190;
+	top: 340px;
+	left: 25px;
+}
+
+/* PLAYING PIECES */
+
 .playerPiece_1, .playerPiece_2, .playerPiece_3, .playerPiece_4{
 	left: 22pt;
 	top: 5pt;
 	height: 100px;
-	/* position: absolute; */
 	z-index: 50;
 }
 
 .holdingPen {
 	display: none;
+}
+
+/* PROBLEM CARD DECK */
+
+#blankCards {
+	transform: scale(1.02);
+	filter: drop-shadow( 7px 7px 7px black );
 }
 
 .problemCards {
@@ -187,25 +350,30 @@ h2 {
 	top: 357pt;
 	width: 225pt;
 	height: 125pt;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #problemCard {
+	position: absolute;
 	transition: all .2s ease-in-out;
 	filter: drop-shadow( 5px 5px 5px black );
-	transform: rotate(2deg);
+	transform: rotate(3deg);
 }
 
-/* #problemCArd.hover {
-	animation: pulse 1s linear infinite;
-} */
+#problemCard:hover {
+	transform: rotate(2deg);
+	animation: wiggle 1s linear infinite;
+}
 
 h3 {
+	margin-top: 10px;
 	font-family: Baloo, sans-serif;
 	font-size: 24pt;
 	color: black;
 	text-align: center;
 	line-height: 1;
-	
 }
 
 h4 {
@@ -214,12 +382,12 @@ h4 {
 	color: darkred;
 	text-align: center;
 	padding: 0 0 20pt 0;
-	
 }
 
 .newCard {
 	background: white;
 	position: absolute;
+	padding: 10px;
 	font-family: Baloo, sans-serif;
 	left: 740pt;
 	top: 340pt;
@@ -227,10 +395,21 @@ h4 {
 	height: 153pt;
 	box-shadow: 8pt 8pt 8pt rgba(0, 0, 0, 0.5);
 	transform: rotate(-4deg);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	/* animation: pulse 1s linear infinite; */
 }
 
- 
-.square_0, .square_1, .square_2, .square_3, .square_4, .square_5, .square_6, .square_7, .square_8, .square_9, .square_10, .square_11, .square_12, .square_13, .square_14, .square_15, .square_16, .square_17, .square_18, .square_19, .square_20, .square_21, .square_22, .square_23, .square_24, .square_25, .square_26, .square_27, .square_28, .square_29, .square_30, .square_31, .square_32, .square_33, .square_34 {
+/* .newCard:hover {
+	transform: rotate(-5deg);
+	animation: pulse 1s linear infinite;
+} */
+
+/* GAME BOARD SPACES */
+
+.sq {
 	background: #B3B3B3;
 	position: absolute;
 	display: flex;
@@ -241,6 +420,21 @@ h4 {
 	box-shadow: 0pt 0pt 8pt rgba(180, 0, 0, 0.75);
 	/* border: 2pt darkred solid; */
 }
+
+/* .sq:nth-child(3n+2) {
+	animation: soultrain 3s linear infinite;
+}
+
+.sq:nth-child(3n+1) {
+	animation: soultrain 3s linear infinite;
+	animation-delay: 2s;
+}
+
+.sq:nth-child(3n+0) {
+	animation: soultrain 3s linear infinite;
+	animation-delay: 1s;
+} */
+
 .square_0 {
 	left: 25pt;
 	top: 25pt;
@@ -435,10 +629,8 @@ h4 {
 .victoryScreen {
 	z-index: 0;
 	background: white;
-	position: absolute;
+	position: relative;
 	justify-content: center;
-	left: 245pt;
-	top: 103pt;
 	width: 550pt;
 	height: 432pt;
 	border-radius: 16pt;
@@ -463,8 +655,6 @@ h4 {
 	padding: 6px 22px;
 	box-shadow: 4pt 4pt 4pt rgba(0, 0, 0, 0.75);
 	position: absolute;
-	/* text-align: center; */
-	/* margin: 50pt 50pt 0pt 50pt; */
 	outline: 0;
 	justify-content: center;
 	top: 300pt;
